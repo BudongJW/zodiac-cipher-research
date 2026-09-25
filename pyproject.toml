@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zkc"
+version = "0.1.0"
+description = "Zodiac Killer 密文分析工具：统计、换位、同音替换求解与已知解复现"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.scripts]
+zkc = "zkc.__main__:main"
+
+[tool.setuptools]
+packages = ["zkc"]

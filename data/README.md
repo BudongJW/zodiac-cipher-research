@@ -1,9 +1,18 @@
-# 数据：Z13 与 Z32 转录
+# 数据：密文转录与已知解
 
 | 文件 | 内容 |
 |---|---|
 | [z13.txt](z13.txt) | Z13（“My name is”密文）ASCII 转录，1 行 13 符号 |
 | [z32.txt](z32.txt) | Z32（Mt. Diablo 地图密文）ASCII 转录，按原件分 2 行（17 + 15） |
+| [z408.txt](z408.txt) | Z408 转录，24 行 × 17 列 |
+| [z340.txt](z340.txt) | Z340 转录，20 行 × 17 列 |
+| [solutions/z408_plaintext.txt](solutions/z408_plaintext.txt) | Z408 已知明文（Harden 密钥），与密文逐位对齐，保留 Zodiac 原有的拼写与加密错误 |
+| [solutions/z340_plaintext_cipher_order.txt](solutions/z340_plaintext_cipher_order.txt) | Z340 已知密钥作用于密文后的字母，仍处于**密文位置**（未去除换位） |
+| [solutions/z340_plaintext.txt](solutions/z340_plaintext.txt) | Z340 已知明文，**阅读顺序**（已去除换位；保留原有错误，如 SOOHER、PARADLCE） |
+
+**来源**：Z408 / Z340 的转录与已知解取自 AZdecrypt 1.25 附带的数据（https://github.com/doranchak/azdecrypt ，`AZdecrypt/Ciphers/Zodiac ciphers/`，GPL-3.0），同样采用 webtoy 转录方案。该处的 Z13 / Z32 转录与本目录独立核对的版本逐字相同。
+
+**一致性检查**（`python -m zkc verify`，亦见 `tests/`）：两份已知明文推导出的密钥均自洽（Z408 54 个符号、Z340 63 个符号，每个符号只对应一个字母）；Z340 的密钥作用于密文后，按已发表的换位方案读取，与阅读顺序明文逐字一致。
 
 ## 转录约定
 
@@ -13,7 +22,6 @@
 - 本目录的两份转录已于 2026-09-25 与 Oranchak Wiki 原始 wikitext 逐字符核对一致：
   - Z13：https://zodiackillerciphers.com/wiki/index.php?title=Unsolved_13-character_%22My_name_is%22_cipher
   - Z32：https://zodiackillerciphers.com/wiki/index.php?title=Unsolved_32-character_%22map_code%22_cipher
-- Z408 / Z340 的完整转录请直接使用上述 webtoy 方案页面或 AZdecrypt 附带的数据，本仓库暂不重复收录。
 
 ---
 
@@ -45,7 +53,7 @@ AENz0K0M0[NAM
 - 同构模式（isomorph）：`1 2 3 4 5 6 5 7 5 8 3 1 7`，即 A(1,12)、N(3,11)、圈8(5,7,9)、M(8,13)。
 - 字母形 / 非字母形符号分布呈镜像：`aen??k?m??nam`。
 - multiplicity = 8 / 13 ≈ 0.62。
-- 与其他密文的符号重合（**初步推算**，依据 webtoy 转录，待脚本复核）：A、E、N、⊕、K、M 同时见于 Z408 与 Z340；**圈 8 与 `[` 在 Z408、Z340 中均未出现**。
+- 与其他密文的符号重合（`python -m zkc overlap` 计算）：A、E、N、⊕、K、M 同时见于 Z408 与 Z340；**圈 8 与 `[` 在 Z408、Z340 中均未出现**。
 
 **其他转录写法（对照）**：Pelling `AEN+8K8M8ωNAM`。
 来源：https://ciphermysteries.com/2017/12/16/zodiac-killers-z13-cipher-meets-z340-cipher · https://forum.zodiackillerciphers.com/community/zodiac-cipher-mailings-discussion/all-features-present-in-the-z13-cipher/
@@ -99,7 +107,7 @@ X6FDVj%HCELzPW9
 - 长度 32（两行 17 + 15），不同符号 29 个。
 - 仅 3 个符号重复：C(1,26)、△(2,32)、O(6,14)；其余 26 个符号各出现一次。
 - multiplicity = 29 / 32 ≈ 0.91。
-- 与其他密文的符号重合（**初步推算**，待脚本复核）：29 个符号中约 25 个见于 Z408（缺 C、`|`、`[`、`?`），约 27 个见于 Z340（缺 `[`、`?`）。**`[` 只出现在 Z13 与 Z32 中**——两份未解密文共享一个其他密文中没有的符号。
+- 与其他密文的符号重合（`python -m zkc overlap` 计算）：29 个符号中 25 个见于 Z408（缺 C、`|`、`[`、`?`），27 个见于 Z340（缺 `[`、`?`）。**`[` 只出现在 Z13 与 Z32 中**——两份未解密文共享一个其他密文中没有的符号。
 
 **其他转录写法（对照）**：Foxon（IACR ePrint 2023/982, Fig. 1A）以数字标记非字母符号：
 ```
@@ -113,5 +121,5 @@ X 8 F D V 9 ! H C E L ? P W 1
 ## 待办
 
 - [ ] 对照高清扫描件，逐一确认所有标注“有争议 / 待核实”的字形，并记录备选读法。
-- [ ] 取得 Z408 / Z340 的 webtoy 转录，用脚本精确计算四份密文之间的符号重合表。
+- [x] 取得 Z408 / Z340 的 webtoy 转录，用脚本精确计算四份密文之间的符号重合表。
 - [ ] 为每个符号建立统一 ID 与字形图片索引（便于跨密文比对）。
