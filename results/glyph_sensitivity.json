@@ -1,0 +1,78 @@
+{
+ "原转录": {
+  "cipher": "C9J|#Ok[AMf8?ORTGX6FDVj%HCELzPW9",
+  "distinct": 29,
+  "repeats": 3,
+  "p_ge_distinct_z340_cycle": 0.57265,
+  "p_same_profile_z340_cycle": 0.15565,
+  "english_fit": {
+   "windows": 1652048,
+   "fits": 584,
+   "rate": 0.00035350062467918606
+  },
+  "grammar_fits": 153,
+  "grammar_pairs": 65,
+  "claims_fit": {
+   "Grinell 2020": true,
+   "Cragle": true,
+   "Stampher": true
+  }
+ },
+ "第26位为独立符号": {
+  "cipher": "C9J|#Ok[AMf8?ORTGX6FDVj%H④ELzPW9",
+  "distinct": 30,
+  "repeats": 2,
+  "p_ge_distinct_z340_cycle": 0.3608,
+  "p_same_profile_z340_cycle": 0.21625,
+  "english_fit": {
+   "windows": 1652048,
+   "fits": 8126,
+   "rate": 0.004918743281066894
+  },
+  "grammar_fits": 702,
+  "grammar_pairs": 220,
+  "claims_fit": {
+   "Grinell 2020": true,
+   "Cragle": true,
+   "Stampher": true
+  }
+ },
+ "第14位为独立符号": {
+  "cipher": "C9J|#Ok[AMf8?⑤RTGX6FDVj%HCELzPW9",
+  "distinct": 30,
+  "repeats": 2,
+  "p_ge_distinct_z340_cycle": 0.3576,
+  "p_same_profile_z340_cycle": 0.2181,
+  "english_fit": {
+   "windows": 1652048,
+   "fits": 8253,
+   "rate": 0.0049956175607488405
+  },
+  "grammar_fits": 1996,
+  "grammar_pairs": 339,
+  "claims_fit": {
+   "Grinell 2020": true,
+   "Cragle": true,
+   "Stampher": true
+  }
+ },
+ "第14、26位皆为独立符号": {
+  "cipher": "C9J|#Ok[AMf8?⑤RTGX6FDVj%H④ELzPW9",
+  "distinct": 31,
+  "repeats": 1,
+  "p_ge_distinct_z340_cycle": 0.129,
+  "p_same_profile_z340_cycle": 0.1136,
+  "english_fit": {
+   "windows": 1652048,
+   "fits": 118507,
+   "rate": 0.07173338789187723
+  },
+  "grammar_fits": 12977,
+  "grammar_pairs": 884,
+  "claims_fit": {
+   "Grinell 2020": true,
+   "Cragle": true,
+   "Stampher": true
+  }
+ }
+}

@@ -43,7 +43,8 @@ Z32:  C9J|#Ok[AMf8?ORTG
 │   ├── m0-report.md          M0/M1 报告：工具链与 Z408 / Z340 复现结果
 │   ├── m2-report.md          M2 报告：短密文可解性基线、重复结构检验、Z13 姓名空间
 │   ├── m3-report.md          M3 报告：历次 Z13 / Z32 破译声明的统一评估
-│   └── m4-report.md          M4 报告：密钥复用假设检验与后续方向
+│   ├── m4-report.md          M4 报告：密钥复用假设检验与后续方向
+│   └── glyph-report.md       方向 A 报告：对照扫描件核对争议字形
 ├── references/
 │   ├── README.md             参考文献总表（一手资料、论文、书籍、工具、视频）
 │   └── attempts.md           历次破译尝试汇总（Z408 / Z340 / Z13 / Z32 / 其他信件）
@@ -52,6 +53,7 @@ Z32:  C9J|#Ok[AMf8?ORTG
 │   ├── z408.txt z340.txt     已解密文转录
 │   ├── z13.txt  z32.txt      未解密文转录
 │   ├── claims.json           历次 Z13 / Z32 破译声明的结构化记录（M3 评估用）
+│   ├── glyphs/               由公有领域扫描件生成的字形对比图
 │   └── solutions/            Z408 / Z340 已知解（用于回归测试）
 ├── zkc/                      Python 分析工具包（统计、换位、密钥、n-gram、求解器、合成密文、姓名匹配）
 ├── scripts/                  实验脚本（Z340 换位扫描、M2 基线实验）
@@ -81,7 +83,8 @@ python -m unittest discover -s tests      # 运行测试
 | M2 | ✅ | **Z32 的重复结构与 Zodiac 的 Z340 式同音替换一致，Z13 则不一致**；按原转录，Z13 的重复模式极严（7,800 万个“名+姓”中仅 21 个符合），决定性约束是三个“圈 8”（[m2-report](docs/m2-report.md)） |
 | M3 | ✅ | 为 16 条历次 Z13 / Z32 声明统一打分：**无一达到 A 级**（B 6、C 3、D 7）；Z32 各声明与 Z340 / Z408 密钥的一致均在偶然水平（[m3-report](docs/m3-report.md)） |
 | M4 | ✅ | 预注册假设检验：**H001 不支持**（Z32 未沿用 Z340 / Z408 密钥，p = 0.51 / 0.18，功效 92%）；**H002 不支持**（Z13 的 Z340 密钥框架仅有弱信号 p = 0.014，Garlick 读法排第 58 / 676）（[m4-report](docs/m4-report.md)） |
-| 下一步 | 待定 | 需要密文以外的新信息：高清扫描核对争议字形、Z32 地图的地理配准与地名数据（见 [m4-report §5](docs/m4-report.md#5-后续方向按优先级)） |
+| 方向 A | ✅ | 对照公有领域扫描件核对争议字形：Z13 转录成立（圈 8 未见差异，第 11 位为正写 N）；**Z32 第 26 位发现新的读法争议**（下端回钩的 C），更正 3 处字形描述；敏感性分析显示结论不变、对 Z32 声明的否定更强（[glyph-report](docs/glyph-report.md)） |
+| 下一步 | 进行中 | 方向 E：Z32 地图几何——1970-06-26 扫描件中已含 Zodiac 实际寄出的地图（含比例尺），可直接作为底图 |
 
 **截至 M4 的核心结论**：Z32 很可能与 Z408 / Z340 属同一类同音替换体制，但换了一张新密钥；在 32 字符下，任何“读得通”的解都无法与大量同样读得通的错误解区分——**现有 Z13 / Z32 声明没有一条具备证据价值**，突破只能来自密文以外的独立约束。
 
@@ -99,6 +102,11 @@ mkdir -p external/names
 for f in dist.male.first dist.female.first dist.all.last; do
   curl -L -o external/names/$f https://www2.census.gov/topics/genealogy/1990surnames/$f
 done
+
+# 信件扫描件：Wikimedia Commons（公有领域），供 scripts/glyph_sheets.py 使用
+mkdir -p external/scans
+curl -L -o external/scans/Zodiac-name.gif https://upload.wikimedia.org/wikipedia/commons/3/3b/Zodiac-name.gif
+curl -L -o external/scans/June_26_1970_Zodiac_letter.jpg https://upload.wikimedia.org/wikipedia/commons/3/33/June_26_1970_Zodiac_letter.jpg
 ```
 
 ---

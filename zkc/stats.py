@@ -27,6 +27,11 @@ def repeated_positions(text: Sequence) -> dict:
     return {ch: p for ch, p in pos.items() if len(p) > 1}
 
 
+def count_profile(text: Sequence) -> tuple[int, ...]:
+    """各符号出现次数，降序——与具体符号无关的“重复结构”。"""
+    return tuple(sorted(Counter(text).values(), reverse=True))
+
+
 def bigram_repeats(text: Sequence, period: int = 1) -> int:
     """周期 p 的双字母重复数：Σ(count − 1)，统计 (text[i], text[i+p]) 对。
 

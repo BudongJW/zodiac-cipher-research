@@ -13,7 +13,6 @@ import argparse
 import csv
 import random
 import sys
-from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -21,12 +20,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from zkc.cipher import load  # noqa: E402
 from zkc.console import utf8_stdio  # noqa: E402
 from zkc.ngram import ALPHABET  # noqa: E402
+from zkc.stats import count_profile  # noqa: E402
 from zkc.synth import encrypt, homophone_counts, random_key, sample_window, zodiac_plaintexts  # noqa: E402
-
-
-def count_profile(text: str) -> tuple[int, ...]:
-    """各符号出现次数，降序——与具体符号无关的“重复结构”。"""
-    return tuple(sorted(Counter(text).values(), reverse=True))
 
 
 def main() -> None:

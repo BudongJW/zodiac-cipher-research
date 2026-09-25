@@ -118,7 +118,7 @@
 
 | 阶段 | 内容 | 产出 |
 |---|---|---|
-| **M0** | 方向 A：符号重合表、语料、工具链骨架（字形核对待续） | ✅ `zkc/` 工具包、`data/` 四份转录、单元测试（见 [m0-report.md](m0-report.md)） |
+| **M0** | 方向 A：符号重合表、语料、工具链骨架；字形核对（✅ 见 [glyph-report.md](glyph-report.md)） | ✅ `zkc/` 工具包、`data/` 四份转录、单元测试（见 [m0-report.md](m0-report.md)） |
 | **M1** | 用工具链复现 Z408、Z340 已知解 | ✅ 确定性复现（两者逐字一致）；Z408 盲解 ≈ 85%（内置模型）；Z340 盲解待强语言模型 |
 | **M2** | 方向 B：短密文可解性基线 + Z13 姓名空间实验 | ✅ 基准表与报告（见 [m2-report.md](m2-report.md)） |
 | **M3** | 用统一标准为 [attempts.md](../references/attempts.md) 中所有 Z13 / Z32 声明打分 | ✅ 《破译声明评估表》（见 [m3-report.md](m3-report.md)） |
