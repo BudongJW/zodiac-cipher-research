@@ -1,0 +1,24 @@
+{
+  "z13": {
+    "cipher": "AENz0K0M0[NAM",
+    "free_best": 112.23746551860633,
+    "free_best_text": "IFTHERESENTIS",
+    "base_rate": {
+      "windows": 1649587,
+      "fits": 0,
+      "rate": 0.0
+    },
+    "spurious": 1.0
+  },
+  "z32": {
+    "cipher": "C9J|#Ok[AMf8?ORTGX6FDVj%HCELzPW9",
+    "free_best": 239.03977546666272,
+    "free_best_text": "OFUCKINGANDTHISISWEALLYPROVEMBEF",
+    "base_rate": {
+      "windows": 1652048,
+      "fits": 584,
+      "rate": 0.00035350062467918606
+    },
+    "spurious": 1.0
+  }
+}

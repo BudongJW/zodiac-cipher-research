@@ -1,0 +1,166 @@
+{
+  "_说明": "历次 Z13 / Z32 破译声明的结构化记录，供 scripts/m3_evaluate_claims.py 打分。plaintext 为按密文顺序逐位对应的明文字母（仅 A–Z）；无法逐位对应的声明（变位、多步变换、含数字等）plaintext 为 null。freedoms 记录声明所用的额外自由度。来源与背景见 references/attempts.md。",
+  "claims": [
+    {
+      "id": "Z13-bauer",
+      "cipher": "z13",
+      "claimant": "Craig Bauer",
+      "year": 2017,
+      "claimed": "ALFRED E NEUMAN",
+      "plaintext": "ALFREDENEUMAN",
+      "freedoms": [],
+      "source": "https://www.history.com/articles/the-zodiac-ciphers-what-we-know"
+    },
+    {
+      "id": "Z13-garlick",
+      "cipher": "z13",
+      "claimant": "Ryan Garlick",
+      "year": 2020,
+      "claimed": "DR EAT A TOTPEDO",
+      "plaintext": "DREATATOTPEDO",
+      "key_source": "z340",
+      "freedoms": ["为 Z340 中没有的两个符号（圈8、[）另行指定字母", "接受拼写错误 TOTPEDO"],
+      "source": "https://zodiackillerciphers.com/zodiac-killers-z13-cipher-solved/"
+    },
+    {
+      "id": "Z13-stewart",
+      "cipher": "z13",
+      "claimant": "Gary L. Stewart",
+      "year": 2014,
+      "claimed": "EARL VAN BEST JR",
+      "plaintext": "EARLVANBESTJR",
+      "freedoms": ["以“字母数为 13”作为依据"],
+      "source": "https://zodiackillerfacts.com/zodiac-theories/the-accused-the-accusers/earl-van-best-jr-gary-stewart/"
+    },
+    {
+      "id": "Z13-kelleher",
+      "cipher": "z13",
+      "claimant": "Michael Kelleher",
+      "year": 2002,
+      "claimed": "THE BIG SECRETE",
+      "plaintext": "THEBIGSECRETE",
+      "freedoms": ["三个圈8视为通配符"],
+      "source": "https://zodiackillerciphers.com/wiki/index.php?title=Z13_Solutions"
+    },
+    {
+      "id": "Z13-ziraoui",
+      "cipher": "z13",
+      "claimant": "Fayçal Ziraoui",
+      "year": 2021,
+      "claimed": "KAYR → KAYE（Lawrence Kane）",
+      "plaintext": null,
+      "freedoms": ["多步变换（Z340 密钥 → A1Z26 变体 → 表盘位置 → Trifid）"],
+      "source": "https://forum.zodiackillerciphers.com/community/zodiac-cipher-mailings-discussion/detailed-solution-to-z13-and-z32/"
+    },
+    {
+      "id": "Z13-casebreakers",
+      "cipher": "z13",
+      "claimant": "Case Breakers",
+      "year": 2021,
+      "claimed": "Gary Francis Poste",
+      "plaintext": null,
+      "freedoms": ["变位（anagram）", "先选定嫌疑人"],
+      "source": "https://www.abc.net.au/news/2021-10-07/zodiac-killer-could-be-gary-poste/100520022"
+    },
+    {
+      "id": "Z13-clausen",
+      "cipher": "z13",
+      "claimant": "Tim Clausen",
+      "year": 2025,
+      "claimed": "LEE ALLEN / ALLEN NAME",
+      "plaintext": null,
+      "freedoms": ["“校验和”规则指定圈8", "字母数与密文长度不一致"],
+      "source": "https://thezodiacsolved.com/debunked-theories.html"
+    },
+    {
+      "id": "Z13-demo-steve",
+      "cipher": "z13",
+      "claimant": "Oranchak Wiki（反例演示）",
+      "year": null,
+      "claimed": "STEVE PETE WEST",
+      "plaintext": "STEVEPETEWEST",
+      "freedoms": ["专门构造以符合重复模式"],
+      "source": "https://zodiackillerciphers.com/wiki/index.php?title=Z13_Solutions"
+    },
+    {
+      "id": "Z13-demo-laura",
+      "cipher": "z13",
+      "claimant": "Oranchak（反例演示）",
+      "year": null,
+      "claimed": "LAURA CATAPULT",
+      "plaintext": "LAURACATAPULT",
+      "freedoms": ["专门构造以符合重复模式"],
+      "source": "https://zodiackillerciphers.com/wiki/index.php?title=Z13_Solutions"
+    },
+    {
+      "id": "Z32-grinell-2020",
+      "cipher": "z32",
+      "claimant": "Richard Grinell",
+      "year": 2020,
+      "claimed": "ESTIMATE FOUR RADIANS AND FIVE INCHES",
+      "plaintext": "ESTIMATEFOURRADIANSANDFIVEINCHES",
+      "freedoms": [],
+      "source": "https://www.zodiacciphers.com/zodiac-news/the-answer-to-the-mount-diablo-code"
+    },
+    {
+      "id": "Z32-cragle",
+      "cipher": "z32",
+      "claimant": "Cragle",
+      "year": null,
+      "claimed": "THREE RADIANS FROM MOUNT AREA TWO INCH",
+      "plaintext": "THREERADIANSFROMMOUNTAREATWOINCH",
+      "freedoms": [],
+      "source": "https://zodiackillerciphers.com/wiki/index.php?title=Z32_Solutions"
+    },
+    {
+      "id": "Z32-stampher",
+      "cipher": "z32",
+      "claimant": "David Stampher",
+      "year": 2026,
+      "claimed": "IN THREE AND THREE EIGHTHS RADIANS TEN",
+      "plaintext": "INTHREEANDTHREEEIGHTHSRADIANSTEN",
+      "freedoms": ["以地理约束筛选候选"],
+      "source": "https://github.com/dstampher/zodiac-z32-cipher"
+    },
+    {
+      "id": "Z32-foxon",
+      "cipher": "z32",
+      "claimant": "Floe Foxon",
+      "year": 2023,
+      "claimed": "TWELVE INCHES ALONG THE THREE RADIANS（换位后，含拼写错误）",
+      "plaintext": null,
+      "freedoms": ["Z340 式换位", "接受拼写错误", "作者自认结果属初步"],
+      "source": "https://eprint.iacr.org/2023/982"
+    },
+    {
+      "id": "Z32-ziraoui",
+      "cipher": "z32",
+      "claimant": "Fayçal Ziraoui",
+      "year": 2021,
+      "claimed": "LABOR DAY FIND 45.609 NORT 58.719 WEST",
+      "plaintext": null,
+      "freedoms": ["多步变换", "含数字", "两个符号被丢弃"],
+      "source": "https://www.oxygen.com/crime-news/faycal-ziraoui-says-he-cracked-remaining-zodiac-ciphers"
+    },
+    {
+      "id": "Z32-amicone",
+      "cipher": "z32",
+      "claimant": "Francesco Amicone",
+      "year": 2019,
+      "claimed": "FOOTHILL BLVD HILLCREST 14 MI FAR 570°",
+      "plaintext": null,
+      "freedoms": ["含数字与缩写"],
+      "source": "https://ostellovolante.com/2020/08/05/zodiac-mount-diablo-cipher-decrypted-eden-township-san-leandro/"
+    },
+    {
+      "id": "Z32-clausen",
+      "cipher": "z32",
+      "claimant": "Tim Clausen",
+      "year": 2025,
+      "claimed": "I AM THE ZODIAC KILLER",
+      "plaintext": null,
+      "freedoms": ["字母数与密文长度不一致"],
+      "source": "https://thezodiacsolved.com/debunked-theories.html"
+    }
+  ]
+}

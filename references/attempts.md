@@ -143,6 +143,8 @@
 | FROM TED KACZYNS[K]I | Doug Oswell | — | — | 需补字母 | 同上 |
 | “Eddie Penerden”、“Steve Pete West”、“Gary Lyle Large”、“Laura Catapult” 等 | Oranchak 等（**反例演示**） | 专门构造的“完全符合重复模式”的名字 | **是** | 用来说明：符合模式的名字多得是，符合本身不构成证据 | 同上 |
 
+> **本项目的统一评估**（M3，[../docs/m3-report.md](../docs/m3-report.md)）：上表可逐位验证的声明中，Bauer、Kelleher、Stewart 与密文直接矛盾（C 级）；Garlick 与两个反例同为 B 级（符合但证据价值低）；其余为不可证伪的 D 级。
+
 ### 3.3 可解性评估
 
 - Oranchak Wiki：允许变位时，在 69,607 个常见名/姓样本中有大量名字“可以符合”，连 “international” 这类 13 字母单词也符合；即便不允许变位，解也非常多，“可能根本无法选出正确的那一个”。
@@ -197,6 +199,8 @@
 | Grant Dickinson | 2026-03 | Devils Elbow → Lake Spaulding（与失踪护士 Donna Lass 相关） | Pelling 评论 | https://ciphermysteries.com/other-ciphers/zodiac-killer-ciphers/zodiac-killer-z32 |
 | Praetorian（N. Sportsman） | 2026-04-01 | 弧度/角度三元组几何 | 注意发布日期为愚人节；作者承认可能是事后推理 | https://www.praetorian.com/blog/a-possible-solution-to-the-zodiac-killer-z32-cipher/ |
 | Tim Clausen | 2025–26 | “I AM THE ZODIAC KILLER” | 未经独立验证 | https://thezodiacsolved.com/debunked-theories.html |
+
+> **本项目的统一评估**（M3，[../docs/m3-report.md](../docs/m3-report.md)）：Grinell、Cragle、Stampher 的读法都符合重复模式，但属 B 级——普通英文约每 2,800 个 32 字母片段就有 1 个同样符合，小文法中有 153 条“弧度 + 英寸”指令符合；三者与 Z340 / Z408 密钥的一致均在偶然水平。其余为 D 级。
 
 ### 4.4 可解性评估
 
