@@ -1,0 +1,694 @@
+{
+ "H002": {
+  "z340/原顺序": {
+   "frame": "DREA_A_O__EDO",
+   "best": "DREATATOTHEDO",
+   "score": 85.6809335941977,
+   "top10": [
+    [
+     "DREATATOTHEDO",
+     85.6809335941977
+    ],
+    [
+     "DREANANONCEDO",
+     79.13144979407079
+    ],
+    [
+     "DREASASOSTEDO",
+     78.44717536719189
+    ],
+    [
+     "DREANANONTEDO",
+     78.00728466419825
+    ],
+    [
+     "DREANANONSEDO",
+     77.07862651343399
+    ],
+    [
+     "DREANANONWEDO",
+     76.73648929999453
+    ],
+    [
+     "DREANANONGEDO",
+     76.29659859700092
+    ],
+    [
+     "DREASASOSHEDO",
+     76.24772185222386
+    ],
+    [
+     "DREANANONBEDO",
+     75.66120091489906
+    ],
+    [
+     "DREANANONMEDO",
+     75.22131021190546
+    ]
+   ],
+   "fills": 676,
+   "null_mean": 63.820615297393594,
+   "null_sd": 10.19094086737791,
+   "null_n": 2000,
+   "p_value": 0.013993003498250875,
+   "garlick_rank": 58
+  },
+  "z340/逆序": {
+   "frame": "ODE__O_A_AERD",
+   "best": "ODESTOTATAERD",
+   "score": 71.01791016107776,
+   "top10": [
+    [
+     "ODESTOTATAERD",
+     71.01791016107776
+    ],
+    [
+     "ODEINONANAERD",
+     70.96903341630068
+    ],
+    [
+     "ODENTOTATAERD",
+     69.20947060432627
+    ],
+    [
+     "ODESNONANAERD",
+     68.47631943267027
+    ],
+    [
+     "ODEWHOHAHAERD",
+     66.42349615203348
+    ],
+    [
+     "ODELNONANAERD",
+     65.64146823560041
+    ],
+    [
+     "ODELTOTATAERD",
+     65.49483800126923
+    ],
+    [
+     "ODERNONANAERD",
+     65.08005764639617
+    ],
+    [
+     "ODELSOSASAERD",
+     64.61505659528204
+    ],
+    [
+     "ODEITOTATAERD",
+     63.73527518929484
+    ]
+   ],
+   "fills": 676,
+   "null_mean": 64.13815955879856,
+   "null_sd": 9.898742555522515,
+   "null_n": 2000,
+   "p_value": 0.23788105947026486
+  },
+  "z340/删去圈8": {
+   "frame": "DREAAO_EDO",
+   "best": "DREAAONEDO",
+   "score": 50.38406634255383,
+   "top10": [
+    [
+     "DREAAONEDO",
+     50.38406634255383
+    ],
+    [
+     "DREAAOSEDO",
+     44.14123459297582
+    ],
+    [
+     "DREAAOMEDO",
+     43.3214688076777
+    ],
+    [
+     "DREAAOPEDO",
+     43.2584099011163
+    ],
+    [
+     "DREAAOLEDO",
+     42.18640848957261
+    ],
+    [
+     "DREAAOVEDO",
+     42.12334958301121
+    ],
+    [
+     "DREAAOTEDO",
+     42.06029067644982
+    ],
+    [
+     "DREAAOKEDO",
+     41.87111395676564
+    ],
+    [
+     "DREAAOWEDO",
+     41.808055050204246
+    ],
+    [
+     "DREAAOBEDO",
+     41.61887833052006
+    ]
+   ],
+   "fills": 26,
+   "null_mean": 47.07758700702,
+   "null_sd": 12.848265226216942,
+   "null_n": 2000,
+   "p_value": 0.391304347826087
+  },
+  "z408/原顺序": {
+   "frame": "WEED_S_H__EWH",
+   "best": "WEEDASAHAVEWH",
+   "score": 74.4304253250377,
+   "top10": [
+    [
+     "WEEDASAHAVEWH",
+     74.4304253250377
+    ],
+    [
+     "WEEDASAHAREWH",
+     74.2899905602735
+    ],
+    [
+     "WEEDASAHANEWH",
+     72.65158497135758
+    ],
+    [
+     "WEEDASAHATEWH",
+     72.4643386183386
+    ],
+    [
+     "WEEDASAHAMEWH",
+     70.03013602909209
+    ],
+    [
+     "WEEDASAHALEWH",
+     69.7024549113089
+    ],
+    [
+     "WEEDASAHAPEWH",
+     69.00028108748779
+    ],
+    [
+     "WEEDOSOHOMEWH",
+     68.95346949923305
+    ],
+    [
+     "WEEDASAHAFEWH",
+     68.43854202843092
+    ],
+    [
+     "WEEDOSOHONEWH",
+     67.5023102633361
+    ]
+   ],
+   "fills": 676,
+   "null_mean": 62.93269916575806,
+   "null_sd": 10.060498717969622,
+   "null_n": 2000,
+   "p_value": 0.12443778110944528
+  },
+  "z408/逆序": {
+   "frame": "HWE__H_S_DEEW",
+   "best": "HWERAHASADEEW",
+   "score": 65.16173085059906,
+   "top10": [
+    [
+     "HWERAHASADEEW",
+     65.16173085059906
+    ],
+    [
+     "HWETAHASADEEW",
+     64.08506432074002
+    ],
+    [
+     "HWEMAHASADEEW",
+     63.663760026447356
+    ],
+    [
+     "HWENAHASADEEW",
+     63.00839779088098
+    ],
+    [
+     "HWELAHASADEEW",
+     62.9147746143715
+    ],
+    [
+     "HWEBAHASADEEW",
+     62.446658731824094
+    ],
+    [
+     "HWECAHASADEEW",
+     62.16578920229564
+    ],
+    [
+     "HWERIHISIDEEW",
+     60.19970249559654
+    ],
+    [
+     "HWEGAHASADEEW",
+     60.10607931908706
+    ],
+    [
+     "HWEPAHASADEEW",
+     60.05926773083231
+    ]
+   ],
+   "fills": 676,
+   "null_mean": 63.258340107747415,
+   "null_sd": 10.366685280866083,
+   "null_n": 2000,
+   "p_value": 0.42778610694652675
+  },
+  "z408/删去圈8": {
+   "frame": "WEEDSH_EWH",
+   "best": "WEEDSHOEWH",
+   "score": 58.034840639271806,
+   "top10": [
+    [
+     "WEEDSHOEWH",
+     58.034840639271806
+    ],
+    [
+     "WEEDSHREWH",
+     56.96671473793551
+    ],
+    [
+     "WEEDSHIEWH",
+     55.542546869487126
+    ],
+    [
+     "WEEDSHAEWH",
+     48.30302687154115
+    ],
+    [
+     "WEEDSHNEWH",
+     48.184346215837124
+    ],
+    [
+     "WEEDSHMEWH",
+     47.41292195376091
+    ],
+    [
+     "WEEDSHUEWH",
+     46.582157363832685
+    ],
+    [
+     "WEEDSHEEWH",
+     43.124044807819295
+    ],
+    [
+     "WEEDSHPEWH",
+     42.78437638130365
+    ],
+    [
+     "WEEDSHYEWH",
+     42.72503605345163
+    ]
+   ],
+   "fills": 26,
+   "null_mean": 45.9288248467542,
+   "null_sd": 13.422531356268745,
+   "null_n": 2000,
+   "p_value": 0.18290854572713644
+  }
+ },
+ "H001": {
+  "z340": {
+   "free_symbols": [
+    "[",
+    "?"
+   ],
+   "best_order": "dec(1,3)/rev",
+   "best": "NPYAFTWBITDRIOTEROADPSAGEONERINY",
+   "score": 115.31429042325334,
+   "null_mean": 115.15006776740003,
+   "null_sd": 8.98796015573176,
+   "null_n": 200,
+   "p_value": 0.5124378109452736,
+   "per_order": {
+    "identity": {
+     "score": 90.22,
+     "text": "YNSETAILDOBPHAORTRDFNOPTIYRGAIWN"
+    },
+    "identity/rev": {
+     "score": 106.87,
+     "text": "NWIAGRYITPONFDRTROAMPBODVIATESNY"
+    },
+    "rows-reversed": {
+     "score": 101.26,
+     "text": "TROAMPBODVIATESNYNWIAGRYITPONFDR"
+    },
+    "rows-reversed/rev": {
+     "score": 83.19,
+     "text": "RDFNOPTIYRGAIWNYNSETAILDOBPHAORT"
+    },
+    "boustrophedon": {
+     "score": 100.64,
+     "text": "YNSETAILDOBPHAORTNWIAGRYITPONFDR"
+    },
+    "boustrophedon/rev": {
+     "score": 93.51,
+     "text": "RDFNOPTIYRGAIWNTROAMPBODVIATESNY"
+    },
+    "columns-down": {
+     "score": 113.67,
+     "text": "YRNDSFENTOAPITDIDYORBGPALIAWONRT"
+    },
+    "columns-down/rev": {
+     "score": 93.88,
+     "text": "TRNOWAIMAPGBROYDISTIPAOTNEFSDNRY"
+    },
+    "columns-up": {
+     "score": 106.38,
+     "text": "RYDNFSNEOTPATIILYDROGBAPICWANORT"
+    },
+    "columns-up/rev": {
+     "score": 105.31,
+     "text": "TRONAWHIPABGORDYLIITAPTOENSFNDYR"
+    },
+    "dec(1,1)": {
+     "score": 83.78,
+     "text": "YDSNTPIIDRBALWOTRNFEOATMYOGPIANR"
+    },
+    "dec(1,1)/rev": {
+     "score": 70.4,
+     "text": "RNAIPGOYOTAOEFNRTOWNABRDIIPTNSDY"
+    },
+    "dec(1,2)": {
+     "score": 92.2,
+     "text": "YFTTDGENTDEPURPWRRSOIYBIONNAIOAA"
+    },
+    "dec(1,2)/rev": {
+     "score": 80.04,
+     "text": "AAOIANNOIBYIOSRRWPROPEDTNEGDTTFY"
+    },
+    "dec(1,3)": {
+     "score": 99.03,
+     "text": "YNIRENOUGASPDAORETOIRDTIBWTFAYPN"
+    },
+    "dec(1,3)/rev": {
+     "score": 115.31,
+     "text": "NPYAFTWBITDRIOTEROADPSAGEONERINY"
+    },
+    "dec(1,4)": {
+     "score": 111.15,
+     "text": "YODITNEARFIGODARARTYLEIPSTBNNPOW"
+    },
+    "dec(1,4)/rev": {
+     "score": 111.54,
+     "text": "WOPNNBTSPIELYTRARADOGIFRAUNTIDOY"
+    },
+    "dec(1,5)": {
+     "score": 105.49,
+     "text": "YPBEYADIATOONSIERAGRNDWNTPTROFLI"
+    },
+    "dec(1,5)/rev": {
+     "score": 106.5,
+     "text": "IMFORTPTNWDNRGAREISNOOTAIDAYEBPY"
+    },
+    "dec(1,6)": {
+     "score": 98.94,
+     "text": "YTHDOWSYONOTGTPPRIINIAFDNERROBAA"
+    },
+    "dec(1,6)/rev": {
+     "score": 108.74,
+     "text": "AABORRENDFAINIIRPPTGTONOYSWEDUTY"
+    },
+    "dec(1,7)": {
+     "score": 103.46,
+     "text": "YIOOPDDAISRTTANBRENTANYRPMFOIWEG"
+    },
+    "dec(1,7)/rev": {
+     "score": 96.25,
+     "text": "GEWIOFSPRYNATNERBNATTRSIADDPOOIY"
+    },
+    "dec(1,8)": {
+     "score": 91.73,
+     "text": "YYTIRTOPAOLNPFBDORDSINAWTIEASGNR"
+    },
+    "dec(1,8)/rev": {
+     "score": 102.01,
+     "text": "RNGSAEITWANINDRODBFPNCOAPOTRITYY"
+    },
+    "dec(1,9)": {
+     "score": 99.93,
+     "text": "YRNGSAEITWANINDRODBFPNCOAPOTRITY"
+    },
+    "dec(1,9)/rev": {
+     "score": 91.0,
+     "text": "YTIRTOPAOLNPFBDORDSINAWTIEASGNRY"
+    },
+    "dec(1,10)": {
+     "score": 97.47,
+     "text": "YGEWIOFSPRYNATNERBNATTRSIADDPOOI"
+    },
+    "dec(1,10)/rev": {
+     "score": 102.07,
+     "text": "IOOPDDAISRTTANBRENTANYRPMFOIWEGY"
+    },
+    "dec(1,11)": {
+     "score": 107.07,
+     "text": "YAABORRENDFAINIIRPPTGTONOYSWEDLT"
+    },
+    "dec(1,11)/rev": {
+     "score": 97.29,
+     "text": "THDOWSYONOTGTPPRIINIAFDNERROBAAY"
+    },
+    "dec(1,12)": {
+     "score": 110.01,
+     "text": "YIMFORTPTNWDNRGAREISNOOTAIDAYEBP"
+    },
+    "dec(1,12)/rev": {
+     "score": 107.04,
+     "text": "PBEYADIATOONSIERAGRNDWNTPTROFLIY"
+    },
+    "dec(1,13)": {
+     "score": 108.8,
+     "text": "YWOPNNBTSPIELYTRARADOGIFRAUNTIDO"
+    },
+    "dec(1,13)/rev": {
+     "score": 111.72,
+     "text": "ODITNEARFIGODARARTYLEIPSTBNNPOWY"
+    },
+    "dec(1,14)": {
+     "score": 113.58,
+     "text": "YNPYAFTWBITDRIOTEROADPSAGEONCRIN"
+    },
+    "dec(1,14)/rev": {
+     "score": 97.29,
+     "text": "NIRENOUGASPDAORETOIRDTIBWTFAYPNY"
+    },
+    "dec(1,15)": {
+     "score": 81.21,
+     "text": "YAAOIANNOIBYIOSRRWPROPEDTNEGDTTF"
+    },
+    "dec(1,15)/rev": {
+     "score": 92.33,
+     "text": "FTTDGENTDEPURPWRRSOIYBIONNAIOAAY"
+    },
+    "dec(1,16)": {
+     "score": 72.56,
+     "text": "YRNAIPGOYOTAOEFNRTOWHABRDIIPTNSD"
+    },
+    "dec(1,16)/rev": {
+     "score": 85.58,
+     "text": "DSNTPIIDRBALWOTRNFEOATMYOGPIANRY"
+    }
+   }
+  },
+  "z408": {
+   "free_symbols": [
+    "|",
+    "C",
+    "?",
+    "["
+   ],
+   "best_order": "dec(1,12)/rev",
+   "best": "XDJUNEIDABHIFTCONTONWEILALEGSMIU",
+   "score": 137.95939993450403,
+   "null_mean": 130.5733377968092,
+   "null_sd": 7.565698079442943,
+   "null_n": 200,
+   "p_value": 0.1791044776119403,
+   "per_order": {
+    "identity": {
+     "score": 100.51,
+     "text": "HIFULNICWHDAMNGOAOESNBXLTHETDIEI"
+    },
+    "identity/rev": {
+     "score": 91.94,
+     "text": "IEIDTERTLXBNSEOAOGNMADHWAINLYFIR"
+    },
+    "rows-reversed": {
+     "score": 98.48,
+     "text": "AOGNMADHWAINLYFIRIEIDTERTLXBNSEO"
+    },
+    "rows-reversed/rev": {
+     "score": 106.06,
+     "text": "OESNBXLTSETDIEISIFULNICWHDAMNGOA"
+    },
+    "boustrophedon": {
+     "score": 95.46,
+     "text": "RIFULNICWHDAMNGOAIEIDTERTLXBNSEO"
+    },
+    "boustrophedon/rev": {
+     "score": 95.97,
+     "text": "OESNBXLTRETDIEIAOGNMADHWAINLYFIR"
+    },
+    "columns-down": {
+     "score": 103.2,
+     "text": "COIEFSUNLBNXILETWCHEDTADMINEGIOA"
+    },
+    "columns-down/rev": {
+     "score": 100.97,
+     "text": "AOIGENICDATDEHOWTOLIXNBLNUSFEIOO"
+    },
+    "columns-up": {
+     "score": 102.29,
+     "text": "OREISFNCBLXNLITERWEHTDDAIMENIGOA"
+    },
+    "columns-up/rev": {
+     "score": 117.61,
+     "text": "AOGINEMIADDTHEWRITILNXLBUNFSIERO"
+    },
+    "dec(1,1)": {
+     "score": 107.18,
+     "text": "GEFNLXITWEDDREGAOISUBNLIGHTAINIO"
+    },
+    "dec(1,1)/rev": {
+     "score": 99.42,
+     "text": "OINIATHERLNBUSIOAGENDDEWTIXLNFEE"
+    },
+    "dec(1,2)": {
+     "score": 103.13,
+     "text": "RSLLWTVIAEEXCEAEOOFBIRDIGINNTHDN"
+    },
+    "dec(1,2)/rev": {
+     "score": 82.99,
+     "text": "NDHTNNIGIDRIBFOOEAEEXPEAISTWLLSR"
+    },
+    "dec(1,3)": {
+     "score": 93.42,
+     "text": "ONIERIBUTNFXWDGOALHIOELTDEASNOAI"
+    },
+    "dec(1,3)/rev": {
+     "score": 82.53,
+     "text": "IARNSAEDTLEOIHLLOGDWXFNTSBIKEINR"
+    },
+    "dec(1,4)": {
+     "score": 120.14,
+     "text": "YBWIANDDOSITGENENOLYOUTAFLDIIXHE"
+    },
+    "dec(1,4)/rev": {
+     "score": 113.02,
+     "text": "EHXIIDLFATURALONENEGTISODONAIWBA"
+    },
+    "dec(1,5)": {
+     "score": 137.39,
+     "text": "UXDRUNEIDABHIFTCONTONWEILALEGSMI"
+    },
+    "dec(1,5)/rev": {
+     "score": 125.27,
+     "text": "IUSGELALIEWNOTNORTFIHBADIENCEDXC"
+    },
+    "dec(1,6)": {
+     "score": 99.29,
+     "text": "ULVEREFUGNHLTAXAOIIITNSWIDEOBDND"
+    },
+    "dec(1,6)/rev": {
+     "score": 95.07,
+     "text": "DNDBOEMIWSNTIIIOAXATLHNGOFEVERLO"
+    },
+    "dec(1,7)": {
+     "score": 108.07,
+     "text": "CTGBAEWNIFEALNNDOMILDICOXYSHIERT"
+    },
+    "dec(1,7)/rev": {
+     "score": 96.88,
+     "text": "TMEIHSEXORIDLIPODNNLAEFINWEABGTR"
+    },
+    "dec(1,8)": {
+     "score": 107.86,
+     "text": "MMATOLGXNBYNASDEHOWSIINELINDFTIE"
+    },
+    "dec(1,8)/rev": {
+     "score": 108.31,
+     "text": "EITFDRILENIITWOHEDSANDBNXGLOTACC"
+    },
+    "dec(1,9)": {
+     "score": 105.68,
+     "text": "REITFDMILENIITWOHEDSANDBNXGLOTAR"
+    },
+    "dec(1,9)/rev": {
+     "score": 106.63,
+     "text": "RATOLGXNBYNASDEHOWMIINELINDFTIER"
+    },
+    "dec(1,10)": {
+     "score": 100.11,
+     "text": "RTHEIHSEXORIDLIPODNNLAEFINWEABGT"
+    },
+    "dec(1,10)/rev": {
+     "score": 109.58,
+     "text": "TGBAEWNIFEALNNDOMILDIROXYSHIESTR"
+    },
+    "dec(1,11)": {
+     "score": 91.36,
+     "text": "ODNDBOEMIWSNTIIIOAXATLHNGOFEVERL"
+    },
+    "dec(1,11)/rev": {
+     "score": 95.09,
+     "text": "LVEREFUGNHLTAXAOIIITNSWIDEOBDNDU"
+    },
+    "dec(1,12)": {
+     "score": 127.11,
+     "text": "CIUSGELALIEWNOTNORTFIHBADIENCYDX"
+    },
+    "dec(1,12)/rev": {
+     "score": 137.96,
+     "text": "XDJUNEIDABHIFTCONTONWEILALEGSMIU"
+    },
+    "dec(1,13)": {
+     "score": 112.38,
+     "text": "REHXIIDLFATHERLONENEGTISODONAIWB"
+    },
+    "dec(1,13)/rev": {
+     "score": 121.05,
+     "text": "BWIANDDOSITGENENOLYOUTAFLDIIXHEY"
+    },
+    "dec(1,14)": {
+     "score": 81.35,
+     "text": "MIAMNSAEDTLEOIHLROGDWXFNTABIKEIN"
+    },
+    "dec(1,14)/rev": {
+     "score": 92.82,
+     "text": "NIERIBUTNFXWDGOALHIOELTDEASNMAIM"
+    },
+    "dec(1,15)": {
+     "score": 83.45,
+     "text": "RNDHTNNIGIDRIBFOOEAEEXPEAISTWLLS"
+    },
+    "dec(1,15)/rev": {
+     "score": 103.7,
+     "text": "SLLWTVIAEEXCEAEOOFBIRDIGINNTHDNR"
+    },
+    "dec(1,16)": {
+     "score": 102.13,
+     "text": "COINIATHCOLNBUSIOAGERDDEWTIXLNFE"
+    },
+    "dec(1,16)/rev": {
+     "score": 109.13,
+     "text": "EFNLXITWEDDREGAOISUBNLIGHTAINIOG"
+    }
+   }
+  }
+ },
+ "H001_power_z340": {
+  "trials": 50,
+  "threshold": 136.05606308963212,
+  "mean": 155.54571410376886,
+  "min": 127.15150275716907,
+  "power": 0.92
+ }
+}

@@ -32,7 +32,8 @@ from zkc.corpus import get_model  # noqa: E402
 from zkc.ngram import ALPHABET, NgramModel  # noqa: E402
 from zkc.reproduce import reference_key  # noqa: E402
 from zkc.solver import batch_objective  # noqa: E402
-from zkc.transpose import ragged_grid_orders, untranspose  # noqa: E402
+from zkc.synth import sample_window, zodiac_plaintexts  # noqa: E402
+from zkc.transpose import ragged_grid_orders, transpose, untranspose  # noqa: E402
 
 CODE = {ch: i for i, ch in enumerate(ALPHABET)}
 
@@ -142,21 +143,60 @@ def run_h001(model, keys, n_null, rng) -> dict:
     return out
 
 
+def run_power(model, key, trials, threshold, rng) -> dict:
+    """H001 的检验功效：若 32 字母的 Zodiac 明文确实用该密钥（同音轮换）加密，并经过候选族中
+    随机一种换位，本检验的统计量能否超过零假设的 1% 阈值？密钥中没有的字母用新符号代替。"""
+    homophones: dict[str, list[str]] = {}
+    for sym, letter in key.items():
+        homophones.setdefault(letter, []).append(sym)
+    orders = ragged_grid_orders([17, 15])
+    names = list(orders)
+    scores = []
+    for t in range(trials):
+        plain = sample_window(zodiac_plaintexts(), 32, rng)
+        turn = {ch: rng.randrange(len(s)) for ch, s in homophones.items()}
+        cipher = []
+        for i, ch in enumerate(plain):
+            if ch in homophones:
+                syms = homophones[ch]
+                cipher.append(syms[turn[ch] % len(syms)])
+                turn[ch] += 1
+            else:
+                cipher.append(chr(0x4E00 + i))  # 密钥中没有的字母 → 新符号
+        cipher_t = transpose(cipher, orders[rng.choice(names)])
+        scores.append(max(best_fill(untranspose(cipher_t, o), key, model, rng, starts=4)["score"]
+                          for o in orders.values()))
+    power = sum(s > threshold for s in scores) / trials
+    print(f"功效检验：{trials} 次，统计量均值 {np.mean(scores):.1f}，超过阈值 {threshold:.1f} 的比例 {power:.2f}",
+          flush=True)
+    return {"trials": trials, "threshold": threshold, "mean": float(np.mean(scores)),
+            "min": float(np.min(scores)), "power": power}
+
+
 def main() -> None:
     utf8_stdio()
     p = argparse.ArgumentParser()
     p.add_argument("--model", required=True)
     p.add_argument("--null-z13", type=int, default=2000)
     p.add_argument("--null-z32", type=int, default=200)
+    p.add_argument("--power", type=int, default=0, help="只做 H001 功效检验（次数），读取已有结果中的零假设阈值")
     p.add_argument("--seed", type=int, default=0)
     args = p.parse_args()
 
     model = get_model(args.model)
     keys = {"z340": reference_key("z340"), "z408": reference_key("z408")}
     rng = random.Random(args.seed)
+    out = ROOT / "results" / "m4_key_reuse.json"
+    if args.power:
+        results = json.loads(out.read_text(encoding="utf-8"))
+        h001 = results["H001"]["z340"]
+        threshold = h001["null_mean"] + 2.326 * h001["null_sd"]  # 正态近似的 1% 单侧阈值
+        results["H001_power_z340"] = run_power(model, keys["z340"], args.power, threshold, rng)
+        out.write_text(json.dumps(results, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"已更新 {out.relative_to(ROOT)}")
+        return
     results = {"H002": run_h002(model, keys, args.null_z13, rng),
                "H001": run_h001(model, keys, args.null_z32, rng)}
-    out = ROOT / "results" / "m4_key_reuse.json"
     out.write_text(json.dumps(results, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"已写入 {out.relative_to(ROOT)}")
 
