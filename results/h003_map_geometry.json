@@ -1,0 +1,188 @@
+{
+ "rules": {
+  "center": [
+   37.881697781,
+   -121.914154997
+  ],
+  "declination": 16.88,
+  "miles_per_inch": 6.4,
+  "targets": {
+   "Ingleside 警察分局（Grinell）": [
+    37.7246336,
+    -122.446302
+   ],
+   "Blue Rock Springs 公园（Stampher）": [
+    38.1264012,
+    -122.1888741
+   ]
+  },
+  "radii_miles": [
+   0.5,
+   1.0,
+   2.0
+  ],
+  "rotations": 10000
+ },
+ "原转录（65 种组合）/主约定": {
+  "Ingleside 警察分局（Grinell）": {
+   "min_distance_miles": 2.22,
+   "nearest": {
+    "convention": "顺时针+偏角（主约定）",
+    "radians": 4.0,
+    "inches": 5.0
+   },
+   "hits": {
+    "0.5": 0,
+    "1.0": 0,
+    "2.0": 0
+   },
+   "p_chance": {
+    "0.5": 0.0,
+    "1.0": 0.0081,
+    "2.0": 0.0871
+   }
+  },
+  "Blue Rock Springs 公园（Stampher）": {
+   "min_distance_miles": 4.85,
+   "nearest": {
+    "convention": "顺时针+偏角（主约定）",
+    "radians": 18.0,
+    "inches": 3.0
+   },
+   "hits": {
+    "0.5": 0,
+    "1.0": 0,
+    "2.0": 0
+   },
+   "p_chance": {
+    "0.5": 0.0,
+    "1.0": 0.0,
+    "2.0": 0.0
+   }
+  }
+ },
+ "原转录（65 种组合）/4 种约定合并": {
+  "Ingleside 警察分局（Grinell）": {
+   "min_distance_miles": 2.22,
+   "nearest": {
+    "convention": "顺时针+偏角（主约定）",
+    "radians": 4.0,
+    "inches": 5.0
+   },
+   "hits": {
+    "0.5": 0,
+    "1.0": 0,
+    "2.0": 0
+   },
+   "p_chance": {
+    "0.5": 0.0,
+    "1.0": 0.0317,
+    "2.0": 0.3257
+   }
+  },
+  "Blue Rock Springs 公园（Stampher）": {
+   "min_distance_miles": 4.36,
+   "nearest": {
+    "convention": "逆时针+偏角",
+    "radians": 20.0,
+    "inches": 3.0
+   },
+   "hits": {
+    "0.5": 0,
+    "1.0": 0,
+    "2.0": 0
+   },
+   "p_chance": {
+    "0.5": 0.0,
+    "1.0": 0.0,
+    "2.0": 0.0
+   }
+  }
+ },
+ "第26位独立（220 种组合）/主约定": {
+  "Ingleside 警察分局（Grinell）": {
+   "min_distance_miles": 2.22,
+   "nearest": {
+    "convention": "顺时针+偏角（主约定）",
+    "radians": 4.0,
+    "inches": 5.0
+   },
+   "hits": {
+    "0.5": 0,
+    "1.0": 0,
+    "2.0": 0
+   },
+   "p_chance": {
+    "0.5": 0.0,
+    "1.0": 0.0151,
+    "2.0": 0.1617
+   }
+  },
+  "Blue Rock Springs 公园（Stampher）": {
+   "min_distance_miles": 4.85,
+   "nearest": {
+    "convention": "顺时针+偏角（主约定）",
+    "radians": 18.0,
+    "inches": 3.0
+   },
+   "hits": {
+    "0.5": 0,
+    "1.0": 0,
+    "2.0": 0
+   },
+   "p_chance": {
+    "0.5": 0.0255,
+    "1.0": 0.056,
+    "2.0": 0.1107
+   }
+  }
+ },
+ "第26位独立（220 种组合）/4 种约定合并": {
+  "Ingleside 警察分局（Grinell）": {
+   "min_distance_miles": 2.22,
+   "nearest": {
+    "convention": "顺时针+偏角（主约定）",
+    "radians": 4.0,
+    "inches": 5.0
+   },
+   "hits": {
+    "0.5": 0,
+    "1.0": 0,
+    "2.0": 0
+   },
+   "p_chance": {
+    "0.5": 0.0,
+    "1.0": 0.0654,
+    "2.0": 0.5238
+   }
+  },
+  "Blue Rock Springs 公园（Stampher）": {
+   "min_distance_miles": 0.43,
+   "nearest": {
+    "convention": "逆时针+偏角",
+    "radians": 1.0,
+    "inches": 3.5
+   },
+   "hits": {
+    "0.5": 1,
+    "1.0": 1,
+    "2.0": 1
+   },
+   "p_chance": {
+    "0.5": 0.0995,
+    "1.0": 0.1933,
+    "2.0": 0.3631
+   }
+  }
+ },
+ "grinell_main_convention": {
+  "bearing": 246.06,
+  "lat": 37.69258,
+  "lon": -122.44911,
+  "distance_to_ingleside_miles": 2.22
+ },
+ "blue_rock_springs_geometry": {
+  "bearing_from_center": 318.59,
+  "distance_inches": 3.53
+ }
+}
