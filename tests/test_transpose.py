@@ -1,7 +1,8 @@
 import unittest
 
 from zkc.reproduce import verify_z340
-from zkc.transpose import decimation, is_permutation, transpose, untranspose, z340_order
+from zkc.transpose import (decimation, is_permutation, ragged_grid_orders, transpose, untranspose,
+                           z340_order)
 
 
 class TestTranspose(unittest.TestCase):
@@ -26,6 +27,16 @@ class TestTranspose(unittest.TestCase):
 
     def test_z340_published_scheme_reproduces_plaintext(self):
         self.assertTrue(verify_z340().plaintext_matches)
+
+    def test_ragged_grid_orders(self):
+        orders = ragged_grid_orders([17, 15])  # Z32 的行结构
+        self.assertEqual(len(orders), 42)
+        self.assertTrue(all(is_permutation(o, 32) for o in orders.values()))
+        self.assertEqual(orders["identity"], list(range(32)))
+        self.assertEqual(orders["columns-down"][:4], [0, 17, 1, 18])
+        # “行序颠倒”与“逐行倒读的逆序”相同，去重后只保留后者
+        self.assertNotIn("rows-swapped", orders)
+        self.assertEqual(orders["rows-reversed/rev"][:2], [17, 18])
 
 
 if __name__ == "__main__":

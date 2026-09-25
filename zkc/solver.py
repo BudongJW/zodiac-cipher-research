@@ -137,6 +137,23 @@ def objective(mean_ngram: float, entropy: float, entropy_weight: float) -> float
     return mean_ngram * (entropy / H_REF) ** entropy_weight
 
 
+def batch_objective(codes: np.ndarray, model: NgramModel,
+                    entropy_weight: float = DEFAULT_ENTROPY_WEIGHT) -> np.ndarray:
+    """批量计算目标函数：codes 为 (B, L) 的明文编码矩阵（0..25），返回长度 B 的得分。"""
+    codes = np.asarray(codes, dtype=np.int64)
+    batch, length = codes.shape
+    n_grams = length - model.n + 1
+    idx = np.zeros((batch, n_grams), dtype=np.int64)
+    for j in range(model.n):
+        idx = idx * 26 + codes[:, j:j + n_grams]
+    mean = model.table[idx].mean(axis=1)
+    counts = (codes[:, :, None] == _LETTERS[None, None, :]).sum(axis=1)
+    p = counts / length
+    with np.errstate(divide="ignore", invalid="ignore"):
+        h = -np.where(p > 0, p * np.log2(p), 0.0).sum(axis=1)
+    return mean * (h / H_REF) ** entropy_weight
+
+
 # -- 多次重启（可多进程） -------------------------------------------------------
 
 _WORKER: dict = {}

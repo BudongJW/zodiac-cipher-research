@@ -1,0 +1,624 @@
+{
+  "原转录": {
+    "cipher": "AENz0K0M0[NAM",
+    "名+姓/同音替换": {
+      "pairs": 78089588,
+      "fits": 21,
+      "fit_rate": 2.689218951955541e-07,
+      "weighted_fit_rate": 3.5984446642736247e-08,
+      "examples": [
+        "CHASTITY TRACY",
+        "ADRIANA HARRAH",
+        "RAELENE SEVERS",
+        "RAELENE SEGERS",
+        "THERESE HERETH",
+        "SHAWANA HABASH",
+        "RAELENE SEBERS",
+        "OSSIE HENERSON",
+        "NEOMA MAGALONG",
+        "NAOMA MAGALONG",
+        "LURLENE SEARLS",
+        "IMOGENE REVOIR",
+        "IMOGENE DEVOID",
+        "FLORENE FENOFF",
+        "ESSIE HENEISEN"
+      ]
+    },
+    "名+姓/简单替换": {
+      "pairs": 78089588,
+      "fits": 3,
+      "fit_rate": 3.8417413599364876e-08,
+      "weighted_fit_rate": 2.4135909333542602e-08,
+      "examples": [
+        "CHASTITY TRACY",
+        "IMOGENE REVOIR",
+        "IMOGENE DEVOID"
+      ]
+    },
+    "男性名+姓/同音替换": {
+      "pairs": 18039638,
+      "fits": 2,
+      "fit_rate": 1.1086696972522397e-07,
+      "weighted_fit_rate": 0.0,
+      "examples": [
+        "EDDIE RESENDES",
+        "EARLE DESERRES"
+      ]
+    },
+    "男性名+姓/简单替换": {
+      "pairs": 18039638,
+      "fits": 0,
+      "fit_rate": 0.0,
+      "weighted_fit_rate": 0.0,
+      "examples": []
+    },
+    "名+中间名首字母+姓/同音替换": {
+      "pairs": 2013622572,
+      "fits": 296,
+      "fit_rate": 1.469987494756788e-07,
+      "weighted_fit_rate": 4.644347992156487e-08,
+      "examples": [
+        "ESTHERE REITER",
+        "ASHLEYE MECHAM",
+        "ESTHERE REUTER",
+        "SHANNONE NEASE",
+        "ESTHERE RESTER",
+        "CASSIEI HIRSCH",
+        "EILEENE SEALES",
+        "EILEENE RESLER",
+        "ELLAA VANALLEN",
+        "ADRIANA HARRAH",
+        "ADRIANAM ABRAM",
+        "CHASTITYT LACY",
+        "ELLIOTO ROLLER",
+        "MERCEDESE ARMS",
+        "EULAA VANALLEN"
+      ]
+    },
+    "名+中间名首字母+姓/简单替换": {
+      "pairs": 2013622572,
+      "fits": 25,
+      "fit_rate": 1.2415434921932332e-08,
+      "weighted_fit_rate": 1.065073348339606e-08,
+      "examples": [
+        "ASHLEYE MECHAM",
+        "CHASTITYT LACY",
+        "ISRAELE NEGRIN",
+        "ELIJAHA RAPIER",
+        "EDISONO ROZIER",
+        "CHASTITYT MACY",
+        "ELODIAI SIMOES",
+        "USHAE KETELHUT",
+        "NOELIAI SIMENS",
+        "LIBRADAE AUBLE",
+        "LIBRADAE AMBLE",
+        "ISRAELE GEHRIG",
+        "ISOBELE REVOIR",
+        "ISOBELE DEVOID",
+        "ECHOA FARAGHER"
+      ]
+    },
+    "英文片段/Zodiac 明文": {
+      "windows": 706,
+      "degenerate_skipped": 0,
+      "fits": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "英文片段/标准库英文": {
+      "windows": 1648881,
+      "degenerate_skipped": 2732,
+      "fits": 0,
+      "rate": 0.0,
+      "examples": []
+    }
+  },
+  "圈8视为三个不同符号": {
+    "cipher": "AENz①K②M③[NAM",
+    "名+姓/同音替换": {
+      "pairs": 78089588,
+      "fits": 14099,
+      "fit_rate": 0.0001805490381124818,
+      "weighted_fit_rate": 6.464474188953128e-05,
+      "examples": [
+        "KENNETH SHANKS",
+        "ROBERT LEFEBRE",
+        "EUGENE KRUEGER",
+        "KENNETH SPINKS",
+        "LILLIE PADILLA",
+        "CLARENCE GRACE",
+        "ARMANDO NEWMAN",
+        "THERESA SHEETS",
+        "EUGENE GRANGER",
+        "ARMANDO NORMAN",
+        "TERRY ASHWORTH",
+        "STEVEN DEWEESE",
+        "CHARLES KNAACK",
+        "ESTHER TROTTER",
+        "LILLIAN SMALLS"
+      ]
+    },
+    "名+姓/简单替换": {
+      "pairs": 78089588,
+      "fits": 338,
+      "fit_rate": 4.328361932195109e-06,
+      "weighted_fit_rate": 1.4446438822913133e-06,
+      "examples": [
+        "RHONDA SEYMORE",
+        "MARILYN STORMS",
+        "RHONDA WETMORE",
+        "MARTIN DELORME",
+        "EMILY STROZIER",
+        "HECTOR BIANCHI",
+        "EDISON FRAZIER",
+        "MARVIN DELORME",
+        "MILAGROS HELMS",
+        "NEIL DAGOSTINO",
+        "MARCUS DELORME",
+        "CLAUDINE GRACE",
+        "DORTHY VELARDE",
+        "KAROLINE BURKE",
+        "MARIBEL STORMS"
+      ]
+    },
+    "男性名+姓/同音替换": {
+      "pairs": 18039638,
+      "fits": 3225,
+      "fit_rate": 0.00017877298868192366,
+      "weighted_fit_rate": 6.312915262552756e-05,
+      "examples": [
+        "KENNETH SHANKS",
+        "ROBERT LEFEBRE",
+        "EUGENE KRUEGER",
+        "KENNETH SPINKS",
+        "CLARENCE GRACE",
+        "ARMANDO NEWMAN",
+        "ARMANDO NORMAN",
+        "EUGENE GRANGER",
+        "STEVEN DEWEESE",
+        "CHARLES KNAACK",
+        "TERRY ASHWORTH",
+        "ERNEST BRUNNER",
+        "ERNEST BRENNER",
+        "NEIL VALENTINE",
+        "DANIEL KORANDO"
+      ]
+    },
+    "男性名+姓/简单替换": {
+      "pairs": 18039638,
+      "fits": 113,
+      "fit_rate": 6.263983789475155e-06,
+      "weighted_fit_rate": 9.983791227670975e-07,
+      "examples": [
+        "MARTIN DELORME",
+        "HECTOR BIANCHI",
+        "EDISON FRAZIER",
+        "MARVIN DELORME",
+        "NEIL DAGOSTINO",
+        "MARCUS DELORME",
+        "ELIJAH CROZIER",
+        "ELIJAH CROSIER",
+        "ETHAN DUROCHER",
+        "ELTON HARPSTER",
+        "ELROY VANBUREN",
+        "ELISHA CROZIER",
+        "REINALDO SPIRO",
+        "MARKUS DELORME",
+        "TONEY BRIGANTI"
+      ]
+    },
+    "名+中间名首字母+姓/同音替换": {
+      "pairs": 2013622572,
+      "fits": 337852,
+      "fit_rate": 0.00016778318076978728,
+      "weighted_fit_rate": 8.590524699643207e-05,
+      "examples": [
+        "CHARLESK BLACK",
+        "KENNETHS BANKS",
+        "ELEANORN GREEN",
+        "CHARLESH LEACH",
+        "DOROTHYY HARDY",
+        "CHARLESH ROACH",
+        "ERNESTOS JONES",
+        "BARBARAY KIRBY",
+        "LILLIANY KELLY",
+        "CYNTHIAH LYNCH",
+        "CHARLESH BEACH",
+        "CHARLESY TRACY",
+        "CHARLESE GRACE",
+        "STEPHENE REESE",
+        "WOODROWN BROWN"
+      ]
+    },
+    "名+中间名首字母+姓/简单替换": {
+      "pairs": 2013622572,
+      "fits": 13430,
+      "fit_rate": 6.669571640062049e-06,
+      "weighted_fit_rate": 9.19139739357637e-06,
+      "examples": [
+        "EMILYX FRAZIER",
+        "EMILYW FRAZIER",
+        "EMILYV FRAZIER",
+        "EMILYU FRAZIER",
+        "EMILYT FRAZIER",
+        "EMILYS FRAZIER",
+        "EMILYQ FRAZIER",
+        "EMILYP FRAZIER",
+        "EMILYO FRAZIER",
+        "EMILYN FRAZIER",
+        "EMILYK FRAZIER",
+        "EMILYJ FRAZIER",
+        "EMILYH FRAZIER",
+        "EMILYG FRAZIER",
+        "EMILYD FRAZIER"
+      ]
+    },
+    "英文片段/Zodiac 明文": {
+      "windows": 706,
+      "degenerate_skipped": 0,
+      "fits": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "英文片段/标准库英文": {
+      "windows": 1648881,
+      "degenerate_skipped": 2732,
+      "fits": 446,
+      "rate": 0.0002704864693085796,
+      "examples": [
+        "ADERSDELETEAL",
+        "ADERTHATCREAT",
+        "ALLBACKSALLAS",
+        "ALRUNOFCHARAC",
+        "AMEASGETCREAT",
+        "AMEFILENAMEAN",
+        "AMEFROMNAMEAN",
+        "AMEGENERATEAR",
+        "AMPLEIFTHEPAT",
+        "ANCELAFTERCAT",
+        "ANCEWILLBECAL",
+        "ANSWERISYESAS",
+        "ARTARGSRESTAR",
+        "ARTWITHTHATAT",
+        "ASCHEDULEDCAL",
+        "ASTHETARGETAR",
+        "ATCHINGLLOCAL",
+        "ATEDTHESAMEAS",
+        "ATEDXZSTCREAT",
+        "ATIVEFILEDIAL"
+      ]
+    }
+  },
+  "删去圈8（视为空符）": {
+    "cipher": "AENzKM[NAM",
+    "名+姓/同音替换": {
+      "pairs": 40185840,
+      "fits": 6010,
+      "fit_rate": 0.00014955516669553257,
+      "weighted_fit_rate": 0.00010158577749660243,
+      "examples": [
+        "GARY GEORGE",
+        "CARL CHURCH",
+        "TRACY HEATH",
+        "RYAN STUART",
+        "CARL PEARCE",
+        "DONNA SANDS",
+        "ANTHONY TAN",
+        "EMMA KRAMER",
+        "ALLEN NOLAN",
+        "DIANNE WADE",
+        "GLENDA VEGA",
+        "ALLEN SALAS",
+        "EVELYN KEEN",
+        "DWAYNE WADE",
+        "LOIS DAVILA"
+      ]
+    },
+    "名+姓/简单替换": {
+      "pairs": 40185840,
+      "fits": 1628,
+      "fit_rate": 4.05117822596218e-05,
+      "weighted_fit_rate": 2.389552745801002e-05,
+      "examples": [
+        "TRACY HEATH",
+        "RYAN STUART",
+        "GLENDA VEGA",
+        "LOIS DAVILA",
+        "RHONDA MORA",
+        "LUIS DAVILA",
+        "EDNA BRUNER",
+        "RYAN EDWARD",
+        "DEAN ROSADO",
+        "CLAUDE PACE",
+        "CLAIRE PACE",
+        "CORY PEARCE",
+        "TRACI HEATH",
+        "LEIGH AVILA",
+        "GRACIE PAGE"
+      ]
+    },
+    "男性名+姓/同音替换": {
+      "pairs": 11039022,
+      "fits": 1582,
+      "fit_rate": 0.0001433097968280161,
+      "weighted_fit_rate": 0.00011306400402086884,
+      "examples": [
+        "GARY GEORGE",
+        "CARL CHURCH",
+        "RYAN STUART",
+        "CARL PEARCE",
+        "ANTHONY TAN",
+        "ALLEN NOLAN",
+        "ALLEN SALAS",
+        "DWAYNE WADE",
+        "LUIS DAVILA",
+        "GLENN GREGG",
+        "LARRY EARLE",
+        "ADRIAN TRAN",
+        "DANNY SANDS",
+        "RYAN EDWARD",
+        "NOEL MORENO"
+      ]
+    },
+    "男性名+姓/简单替换": {
+      "pairs": 11039022,
+      "fits": 498,
+      "fit_rate": 4.511269204826297e-05,
+      "weighted_fit_rate": 1.9042615228249976e-05,
+      "examples": [
+        "RYAN STUART",
+        "LUIS DAVILA",
+        "RYAN EDWARD",
+        "DEAN ROSADO",
+        "CLAUDE PACE",
+        "TRACY HEATH",
+        "CORY PEARCE",
+        "SEAN THRASH",
+        "CHAD MONACO",
+        "CARL PEIRCE",
+        "RYAN TODARO",
+        "NEAL ROMANO",
+        "CLAUDE MACE",
+        "DWAYNE CADE",
+        "CURT PEARCE"
+      ]
+    },
+    "名+中间名首字母+姓/同音替换": {
+      "pairs": 524579874,
+      "fits": 67823,
+      "fit_rate": 0.00012929012980013793,
+      "weighted_fit_rate": 8.125001247335694e-05,
+      "examples": [
+        "SCOTTS ROSS",
+        "SCOTTE ROSE",
+        "ALICEZ DIAZ",
+        "AARONY GRAY",
+        "STEVET WEST",
+        "SCOTTS MOSS",
+        "APRILY GRAY",
+        "DIANEE WADE",
+        "ANITAZ DIAZ",
+        "IRENED REID",
+        "LLOYDE COLE",
+        "LAURAL HULL",
+        "DIANAE WADE",
+        "SCOTTA ROSA",
+        "TRACYE TATE"
+      ]
+    },
+    "名+中间名首字母+姓/简单替换": {
+      "pairs": 524579874,
+      "fits": 19729,
+      "fit_rate": 3.76091439604105e-05,
+      "weighted_fit_rate": 2.601111321814775e-05,
+      "examples": [
+        "ALICEZ DIAZ",
+        "APRILY GRAY",
+        "NAOMIG LONG",
+        "CRAIGK MACK",
+        "AUDREYZ DAY",
+        "AUDREYX DAY",
+        "AUDREYW DAY",
+        "AUDREYV DAY",
+        "AUDREYT DAY",
+        "AUDREYS DAY",
+        "AUDREYQ DAY",
+        "AUDREYP DAY",
+        "AUDREYO DAY",
+        "AUDREYN DAY",
+        "AUDREYM DAY"
+      ]
+    },
+    "英文片段/Zodiac 明文": {
+      "windows": 708,
+      "degenerate_skipped": 4,
+      "fits": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "英文片段/标准库英文": {
+      "windows": 1626322,
+      "degenerate_skipped": 25294,
+      "fits": 312,
+      "rate": 0.00019184392758629594,
+      "examples": [
+        "ACEANDLEAD",
+        "ACTERSETAS",
+        "ADERLDHEAD",
+        "AFECANBEAN",
+        "AKESISFEAS",
+        "AMEISTHEAT",
+        "AMEISTREAT",
+        "AMEOFTHEAT",
+        "AMESTRYEAR",
+        "ANDMETADAT",
+        "ANGLEREGAR",
+        "AREPIDREAD",
+        "ASTRINSTAN",
+        "ATEDONCEAN",
+        "ATFAILSFAL",
+        "CEIFSTRICT",
+        "CSABSTRACT",
+        "DBECALLEDL",
+        "DINPEPANDP",
+        "DONTHEUNDE"
+      ]
+    }
+  },
+  "第11位视为反写N（不同符号）": {
+    "cipher": "AENz0K0M0[④AM",
+    "名+姓/同音替换": {
+      "pairs": 78089588,
+      "fits": 509,
+      "fit_rate": 6.5181545073589064e-06,
+      "weighted_fit_rate": 7.850753054128676e-07,
+      "examples": [
+        "ADRIANA HANNAH",
+        "ERICA VANAUKEN",
+        "ERICA VANALLEN",
+        "EARLENE REEDER",
+        "ADRIANA NATHAN",
+        "ADRIENE NEWMAN",
+        "ERIKA VANAUKEN",
+        "ERIKA VANALLEN",
+        "EARLENE RENNER",
+        "CHASTITY TRACY",
+        "EARLENE REITER",
+        "ELENA VANAUKEN",
+        "ELENA VANALLEN",
+        "EARLENE REUTER",
+        "ELISA VANAUKEN"
+      ]
+    },
+    "名+姓/简单替换": {
+      "pairs": 78089588,
+      "fits": 45,
+      "fit_rate": 5.762612039904731e-07,
+      "weighted_fit_rate": 9.21552901826172e-08,
+      "examples": [
+        "ERICA VANAUKEN",
+        "ELISA VANAUKEN",
+        "IMOGENE DELCID",
+        "ELIZA VANAUKEN",
+        "ELIDA VANAUKEN",
+        "ADRIENE MECHAM",
+        "RAYLENE DEFORD",
+        "RAYLENE DEBORD",
+        "RACHELE DEFORD",
+        "RACHELE DEBORD",
+        "OLIVE HENERSON",
+        "NYDIA MAGALONG",
+        "NUBIA MAGALONG",
+        "NOBLE WEDEKIND",
+        "NISHA MAGALONG"
+      ]
+    },
+    "男性名+姓/同音替换": {
+      "pairs": 18039638,
+      "fits": 26,
+      "fit_rate": 1.4412706064279117e-06,
+      "weighted_fit_rate": 0.0,
+      "examples": [
+        "TEODORO HOWETH",
+        "TEODORO HORETH",
+        "OLLIE HENERSON",
+        "OLIVER ENERSON",
+        "NOBLE WEDEKIND",
+        "LYNDON ODONALD",
+        "LUCIO HOLOWELL",
+        "LANDON ODONALD",
+        "ERNIE RESENDES",
+        "ERNIE HENEISEN",
+        "ERNIE DESERRES",
+        "ERNIE BERENGER",
+        "EMILE RESENDES",
+        "EMILE HENEISEN",
+        "EMILE DESERRES"
+      ]
+    },
+    "男性名+姓/简单替换": {
+      "pairs": 18039638,
+      "fits": 1,
+      "fit_rate": 5.543348486261199e-08,
+      "weighted_fit_rate": 0.0,
+      "examples": [
+        "NOBLE WEDEKIND"
+      ]
+    },
+    "名+中间名首字母+姓/同音替换": {
+      "pairs": 2013622572,
+      "fits": 6362,
+      "fit_rate": 3.1594798789333397e-06,
+      "weighted_fit_rate": 2.213882020915321e-06,
+      "examples": [
+        "ANDREWE NEWMAN",
+        "ASHLEYE NEWMAN",
+        "ANDREAE NEWMAN",
+        "RONALDL ELMORE",
+        "BARBARAY ASHBY",
+        "OLIVERE NELSON",
+        "ALFREDE NEWMAN",
+        "AUDREYE NEWMAN",
+        "VIRGINIAI NAVA",
+        "ANDREWE NEUMAN",
+        "PATRICIAI PAPA",
+        "MERCEDESE SIMS",
+        "MARIANAS ADAMS",
+        "IMOGENES ELLIS",
+        "ALISONO NORMAN"
+      ]
+    },
+    "名+中间名首字母+姓/简单替换": {
+      "pairs": 2013622572,
+      "fits": 395,
+      "fit_rate": 1.9616387176653082e-07,
+      "weighted_fit_rate": 4.44903695455212e-07,
+      "examples": [
+        "ASHLEYE NEWMAN",
+        "ALFREDE NEWMAN",
+        "AUDREYE NEWMAN",
+        "ASHLEYE NEUMAN",
+        "OLIVERE NEWTON",
+        "ANDREWE MECHAM",
+        "AUBREYE NEWMAN",
+        "CALVINI HIRSCH",
+        "ALFREDE NEUMAN",
+        "ERICA VANAUKEN",
+        "ALFREDE MECHAM",
+        "ASHLEYE NEIMAN",
+        "AUDREYE MECHAM",
+        "RACHELE DEFORD",
+        "RACHELE DEBORD"
+      ]
+    },
+    "英文片段/Zodiac 明文": {
+      "windows": 706,
+      "degenerate_skipped": 0,
+      "fits": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "英文片段/标准库英文": {
+      "windows": 1648881,
+      "degenerate_skipped": 2732,
+      "fits": 18,
+      "rate": 1.0916494277027875e-05,
+      "examples": [
+        "ADDDELETESTAT",
+        "AMPROTOCOLFAC",
+        "EADDELETETHET",
+        "EIFDELETEWHET",
+        "ELATEDEVENTEV",
+        "ENTDELETETHET",
+        "EXPLICITISBET",
+        "IGHLEVELEMAIL",
+        "NANDIFITISONT",
+        "OPPROTOCOLLOC",
+        "ROSINANONZERO",
+        "RRAISESOSERRO",
+        "SDEFINITIONST",
+        "TEDINANANNOTA"
+      ]
+    }
+  }
+}

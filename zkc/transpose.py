@@ -42,6 +42,40 @@ def is_permutation(order: Sequence[int], n: int) -> bool:
     return sorted(order) == list(range(n))
 
 
+def ragged_grid_orders(row_lengths: Sequence[int]) -> dict[str, list[int]]:
+    """行长可以不等的网格（如 Z32：17 + 15）上的常见读取顺序，以及它们的逆序。
+
+    包括：原顺序、逐行倒读、行序颠倒、蛇形、按列读（自上而下 / 自下而上），
+    以及 (1, dc) 抽取（在 行数 × 最大行长 的完整网格上走，跳过不存在的格子）。
+    """
+    rows, width = len(row_lengths), max(row_lengths)
+    starts = [sum(row_lengths[:r]) for r in range(rows)]
+    cell = {(r, c): starts[r] + c for r in range(rows) for c in range(row_lengths[r])}
+    n = sum(row_lengths)
+    base: dict[str, list[int]] = {
+        "identity": list(range(n)),
+        "rows-reversed": [cell[(r, c)] for r in range(rows) for c in reversed(range(row_lengths[r]))],
+        "rows-swapped": [cell[(r, c)] for r in reversed(range(rows)) for c in range(row_lengths[r])],
+        "boustrophedon": [cell[(r, c)] for r in range(rows)
+                          for c in (range(row_lengths[r]) if r % 2 == 0 else reversed(range(row_lengths[r])))],
+        "columns-down": [cell[(r, c)] for c in range(width) for r in range(rows) if (r, c) in cell],
+        "columns-up": [cell[(r, c)] for c in range(width) for r in reversed(range(rows)) if (r, c) in cell],
+    }
+    for dc in range(1, width):
+        path = [(k % rows, (k * dc) % width) for k in range(rows * width)]
+        if len(set(path)) == rows * width:
+            base[f"dec(1,{dc})"] = [cell[p] for p in path if p in cell]
+    orders: dict[str, list[int]] = {}
+    seen: set[tuple[int, ...]] = set()
+    for name, order in base.items():
+        for label, o in ((name, order), (f"{name}/rev", order[::-1])):
+            if tuple(o) not in seen:
+                seen.add(tuple(o))
+                orders[label] = o
+    assert all(is_permutation(o, n) for o in orders.values())
+    return orders
+
+
 # ---------------------------------------------------------------------------
 # Z340：Oranchak, Blake, Van Eycke (2020 破解；arXiv:2403.17350) 发表的换位方案
 # ---------------------------------------------------------------------------

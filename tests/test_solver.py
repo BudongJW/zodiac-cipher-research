@@ -1,6 +1,7 @@
 import os
 import random
 import unittest
+from pathlib import Path
 
 from zkc.corpus import builtin_model
 from zkc.ngram import ALPHABET, NgramModel, encode
@@ -51,6 +52,16 @@ class TestSolver(unittest.TestCase):
         best = solve(cipher, self.model, restarts=1, sweeps=20, seed=0, fixed={sym: "Q"})[0]
         self.assertEqual(best.key[sym], "Q")
 
+    def test_batch_objective_matches_objective(self):
+        import numpy as np
+
+        from zkc.solver import DEFAULT_ENTROPY_WEIGHT, batch_objective, objective
+        from zkc.stats import entropy_bits
+        texts = [self.plain[i:i + 40] for i in (0, 50, 100)]
+        batch = batch_objective(np.stack([encode(t) for t in texts]), self.model)
+        for t, b in zip(texts, batch):
+            self.assertAlmostEqual(b, objective(self.model.score(t), entropy_bits(t), DEFAULT_ENTROPY_WEIGHT))
+
     def test_from_corpus_model(self):
         m = NgramModel.from_corpus(self.plain * 3, 3)
         self.assertEqual(m.table.shape, (26 ** 3,))
@@ -64,6 +75,30 @@ class TestBlindReproduction(unittest.TestCase):
         results, acc = blind_solve("z408", builtin_model(4), restarts=8, sweeps=2000,
                                    seed=1, jobs=os.cpu_count() or 1)
         self.assertGreater(acc[0], 0.75)
+
+
+# AZdecrypt 的 beijinghouse 5-gram（CC BY-NC 4.0，需自行下载到 models/，见 docs/m0-report.md）
+AZ5 = Path(__file__).resolve().parent.parent / "models" / "5-grams_english_beijinghouse_10TB_v7.gz"
+
+
+@unittest.skipUnless(os.environ.get("ZKC_SLOW") and AZ5.exists(),
+                     "set ZKC_SLOW=1 and download the AZdecrypt 5-gram model into models/")
+class TestBlindReproductionStrongModel(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from zkc.ngram import NgramModel
+        cls.model = NgramModel.load(AZ5)
+        cls.jobs = os.cpu_count() or 1
+
+    def test_z408_blind(self):
+        from zkc.reproduce import blind_solve
+        _, acc = blind_solve("z408", self.model, restarts=8, sweeps=1500, seed=1, jobs=self.jobs)
+        self.assertGreater(acc[0], 0.99)
+
+    def test_z340_blind(self):
+        from zkc.reproduce import blind_solve
+        _, acc = blind_solve("z340", self.model, restarts=16, sweeps=2000, seed=1, jobs=self.jobs)
+        self.assertGreater(acc[0], 0.9)
 
 
 if __name__ == "__main__":

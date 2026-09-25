@@ -40,7 +40,8 @@ Z32:  C9J|#Ok[AMf8?ORTG
 ├── docs/
 │   ├── ciphers.md            案件背景、四份密文概览、信件年表、作者书写习惯
 │   ├── roadmap.md            破译方向、方法论、验收标准与阶段计划
-│   └── m0-report.md          M0/M1 报告：工具链与 Z408 / Z340 复现结果
+│   ├── m0-report.md          M0/M1 报告：工具链与 Z408 / Z340 复现结果
+│   └── m2-report.md          M2 报告：短密文可解性基线、重复结构检验、Z13 姓名空间
 ├── references/
 │   ├── README.md             参考文献总表（一手资料、论文、书籍、工具、视频）
 │   └── attempts.md           历次破译尝试汇总（Z408 / Z340 / Z13 / Z32 / 其他信件）
@@ -49,7 +50,9 @@ Z32:  C9J|#Ok[AMf8?ORTG
 │   ├── z408.txt z340.txt     已解密文转录
 │   ├── z13.txt  z32.txt      未解密文转录
 │   └── solutions/            Z408 / Z340 已知解（用于回归测试）
-├── zkc/                      Python 分析工具包（统计、换位、密钥、n-gram、求解器）
+├── zkc/                      Python 分析工具包（统计、换位、密钥、n-gram、求解器、合成密文、姓名匹配）
+├── scripts/                  实验脚本（Z340 换位扫描、M2 基线实验）
+├── results/                  实验结果（CSV / JSON）
 ├── tests/                    单元测试
 └── hypotheses/
     └── README.md             假设记录规则、模板与索引
@@ -68,7 +71,29 @@ python -m zkc solve z408                  # 同音替换盲解（内置语言模
 python -m unittest discover -s tests      # 运行测试
 ```
 
-当前进度：**M0 / M1 已完成**——Z408、Z340 已知解逐字复现；Z408 仅凭内置语言模型盲解准确率约 85%；Z340 盲解需要更强的 n-gram 模型。详见 [docs/m0-report.md](docs/m0-report.md)。
+### 当前进度
+
+| 阶段 | 状态 | 主要结果 |
+|---|---|---|
+| M0 / M1 | ✅ | Z408、Z340 已知解逐字复现；盲解（不使用任何明文信息）在 AZdecrypt 5-gram 模型下 **Z408 准确率 100%、Z340 95%**（[m0-report](docs/m0-report.md)） |
+| M2 | ✅ | **Z32 的重复结构与 Zodiac 的 Z340 式同音替换一致，Z13 则不一致**；按原转录，Z13 的重复模式极严（7,800 万个“名+姓”中仅 21 个符合），决定性约束是三个“圈 8”（[m2-report](docs/m2-report.md)） |
+| M3 | 待开始 | 用 M2 基线为历次破译声明统一打分 |
+
+### 外部数据（可选，均不纳入本仓库）
+
+```bash
+# 语言模型：AZdecrypt 附带的 beijinghouse n-gram（许可 CC BY-NC 4.0）
+mkdir -p models
+curl -L -o models/5-grams_english_beijinghouse_10TB_v7.gz https://raw.githubusercontent.com/doranchak/azdecrypt/main/AZdecrypt/N-grams/5-grams_english_beijinghouse_10TB_v7.gz
+curl -L -o models/5-grams_english_beijinghouse_10TB_v7.ini https://raw.githubusercontent.com/doranchak/azdecrypt/main/AZdecrypt/N-grams/5-grams_english_beijinghouse_10TB_v7.ini
+python -m zkc solve z340 --model models/5-grams_english_beijinghouse_10TB_v7.gz --restarts 16
+
+# 姓名数据：1990 年美国人口普查姓名频率表（公有领域），供 scripts/m2_z13_names.py 使用
+mkdir -p external/names
+for f in dist.male.first dist.female.first dist.all.last; do
+  curl -L -o external/names/$f https://www2.census.gov/topics/genealogy/1990surnames/$f
+done
+```
 
 ---
 

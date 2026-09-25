@@ -16,6 +16,7 @@ import time
 
 from . import stats
 from .cipher import KNOWN, load
+from .console import utf8_stdio
 from .corpus import get_model
 from .keys import format_key
 
@@ -104,9 +105,7 @@ def _cmd_build_model(args) -> None:
 
 
 def main(argv=None) -> None:
-    for stream in (sys.stdout, sys.stderr):  # Windows 管道默认编码可能不支持中文
-        if hasattr(stream, "reconfigure"):
-            stream.reconfigure(encoding="utf-8", errors="replace")
+    utf8_stdio()
     p = argparse.ArgumentParser(prog="python -m zkc", description="Zodiac 密文分析工具")
     sub = p.add_subparsers(dest="cmd", required=True)
 
