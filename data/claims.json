@@ -73,6 +73,78 @@
       "source": "https://thezodiacsolved.com/debunked-theories.html"
     },
     {
+      "id": "Z13-baber",
+      "cipher": "z13",
+      "claimant": "Alex Baber",
+      "year": 2025,
+      "claimed": "MARVIN MERRILL（称为 Black Dahlia 嫌疑人 Marvin Margolis 的化名）",
+      "plaintext": null,
+      "direct_reading": "MARVINMERRILL",
+      "freedoms": ["未公开的 2×7 网格换位与空符", "以 “ELIZABETH” 为密钥", "“专有 AI” 从 7,100 万个名字中筛选"],
+      "source": "https://zodiackillerciphers.com/zodiac-and-black-dahlia-solved-by-sherlock-or-charlatan/"
+    },
+    {
+      "id": "Z13-dominik",
+      "cipher": "z13",
+      "claimant": "Matthew Dominik",
+      "year": 2026,
+      "claimed": "AIM NOT O NORMAN",
+      "plaintext": "AIMNOTONORMAN",
+      "freedoms": [],
+      "source": "https://zenodo.org/records/22818582"
+    },
+    {
+      "id": "Z13-insphare",
+      "cipher": "z13",
+      "claimant": "Insphare（GitHub）",
+      "year": 2026,
+      "claimed": "NEIL [X]. G. KING",
+      "plaintext": "NEILXGKING",
+      "drop_symbols": ["0"],
+      "freedoms": ["圈 8 视为空格（空符）", "中间名首字母 X 未定"],
+      "source": "https://github.com/Insphare/zodiac-z13"
+    },
+    {
+      "id": "Z13-culver-young",
+      "cipher": "z13",
+      "claimant": "Vincent Culver-Young",
+      "year": 2022,
+      "claimed": "ROSS O SULLIVAN",
+      "plaintext": "ROSSOSULLIVAN",
+      "freedoms": ["“字母—数字跳跃”规则"],
+      "source": "https://www.zodiackilleralphabetnumbercode.com/blog/the-my-name-is-cipher"
+    },
+    {
+      "id": "Z13-amicone",
+      "cipher": "z13",
+      "claimant": "Francesco Amicone",
+      "year": 2024,
+      "claimed": "JOE BEVILACQUA",
+      "plaintext": "JOEBEVILACQUA",
+      "freedoms": ["格栅 / 叠加", "先选定嫌疑人"],
+      "source": "https://ostellovolante.com/2024/07/26/joe-bevilacqua-zodiac-killer-name-decryption/"
+    },
+    {
+      "id": "Z13-grinell",
+      "cipher": "z13",
+      "claimant": "Richard Grinell",
+      "year": 2025,
+      "claimed": "Me⊕（Z13 即 “我 = Zodiac”）",
+      "plaintext": null,
+      "freedoms": ["非逐位替换的解读"],
+      "source": "https://www.zodiacciphers.com/zodiac-news/the-link-between-the-z13-and-z32"
+    },
+    {
+      "id": "Z13-sds",
+      "cipher": "z13",
+      "claimant": "SDS",
+      "year": 2025,
+      "claimed": "ANDREA J. ODELL",
+      "plaintext": null,
+      "freedoms": ["圈 8 按位置映射为不同字母（J、L、N）", "字母数为 12"],
+      "source": "https://zodiacresearch.blogspot.com/2025/07/canonical-cipher-3-z13-vol1-entropy.html"
+    },
+    {
       "id": "Z13-demo-steve",
       "cipher": "z13",
       "claimant": "Oranchak Wiki（反例演示）",
@@ -113,14 +185,85 @@
       "source": "https://zodiackillerciphers.com/wiki/index.php?title=Z32_Solutions"
     },
     {
-      "id": "Z32-stampher",
+      "id": "Z32-dmw-stampher",
       "cipher": "z32",
-      "claimant": "David Stampher",
-      "year": 2026,
+      "claimant": "DMW（2019）；David Stampher（2026，逐字相同）",
+      "year": 2019,
       "claimed": "IN THREE AND THREE EIGHTHS RADIANS TEN",
       "plaintext": "INTHREEANDTHREEEIGHTHSRADIANSTEN",
-      "freedoms": ["以地理约束筛选候选"],
-      "source": "https://github.com/dstampher/zodiac-z32-cipher"
+      "freedoms": ["从约 15 万条模板短语中按重复模式与地图范围筛选"],
+      "source": "https://zodiackillerciphers.com/zks-attachments/8025.pdf ; https://github.com/dstampher/zodiac-z32-cipher"
+    },
+    {
+      "id": "Z32-reese",
+      "cipher": "z32",
+      "claimant": "Maddie D. Reese（借助 OpenAI Codex）",
+      "year": 2026,
+      "claimed": "THREE AND THREE EIGHTHS RADIANS & SIX INCHES（路径换位后）",
+      "plaintext": "AERIEHDETARNRHISTXHDITNSHASGENIE",
+      "reading": "THREEANDTHREEEIGHTHSRADIANSSIXIN",
+      "freedoms": ["路径换位 position(i) = (8 + 29i) mod 32，由地图印记“1969 Edition”推出"],
+      "source": "https://github.com/maddiedreese/zodiac"
+    },
+    {
+      "id": "Z32-burke-2018",
+      "cipher": "z32",
+      "claimant": "Chad Burke",
+      "year": 2018,
+      "claimed": "COUPLED WITH THE MAP IN WDVC INCHES TWO",
+      "plaintext": "COUPLEDWITHTHEMAPINWDVCINCHESTWO",
+      "freedoms": ["含缩写 WDVC"],
+      "source": "https://ciphermysteries.com/other-ciphers/zodiac-killer-ciphers/zodiac-killer-z32"
+    },
+    {
+      "id": "Z32-burke-2019",
+      "cipher": "z32",
+      "claimant": "Chad W. Burke",
+      "year": 2019,
+      "claimed": "OKAY I SEVEN INS SOUTH OF DIABLO MT PEAK",
+      "plaintext": "OKAYISEVENINSSOUTHOFDIABLOMTPEAK",
+      "freedoms": ["含缩写 INS、MT"],
+      "source": "https://ciphermysteries.com/other-ciphers/zodiac-killer-ciphers/zodiac-killer-z32"
+    },
+    {
+      "id": "Z32-cobb",
+      "cipher": "z32",
+      "claimant": "David Cobb",
+      "year": 2018,
+      "claimed": "CALI … NORTH / X … WEST → 38°11'10.7\"N, 121°48'43.6\"W",
+      "plaintext": null,
+      "freedoms": ["ASCII、培根密码、弧度等多步换算", "部分符号视为分隔符"],
+      "source": "https://www.zodiacz32.com/"
+    },
+    {
+      "id": "Z32-praetorian",
+      "cipher": "z32",
+      "claimant": "Praetorian（Nathan Sportsman）",
+      "year": 2026,
+      "claimed": "三角形之间的三元组读作方位与距离（几何解，无明文）",
+      "plaintext": null,
+      "freedoms": ["几何解读，无逐位明文"],
+      "source": "https://www.praetorian.com/blog/a-possible-solution-to-the-zodiac-killer-z32-cipher/"
+    },
+    {
+      "id": "Z32-dominik",
+      "cipher": "z32",
+      "claimant": "Matthew Dominik",
+      "year": 2026,
+      "claimed": "π 弧度 + 6 英寸 → Near/Neary 采石场（无逐位明文）",
+      "plaintext": null,
+      "freedoms": ["无逐位明文"],
+      "source": "https://zenodo.org/records/22817822"
+    },
+    {
+      "id": "Z32-allen",
+      "cipher": "z32",
+      "claimant": "Richard Allen",
+      "year": 2024,
+      "claimed": "公共土地测量系统（PLSS）解读，指向 Vallejo",
+      "plaintext": null,
+      "freedoms": ["明文未能核实（SSRN 无法访问）"],
+      "source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4715713"
     },
     {
       "id": "Z32-foxon",

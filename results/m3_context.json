@@ -1,5 +1,5 @@
-{
-  "z13": {
+[
+  {
     "cipher": "AENz0K0M0[NAM",
     "free_best": 112.23746551860633,
     "free_best_text": "IFTHERESENTIS",
@@ -10,7 +10,18 @@
     },
     "spurious": 1.0
   },
-  "z32": {
+  {
+    "cipher": "AENzKM[NAM",
+    "free_best": 101.81167042910656,
+    "free_best_text": "SBEINTHEST",
+    "base_rate": {
+      "windows": 1627030,
+      "fits": 312,
+      "rate": 0.00019176044694934943
+    },
+    "spurious": null
+  },
+  {
     "cipher": "C9J|#Ok[AMf8?ORTGX6FDVj%HCELzPW9",
     "free_best": 239.03977546666272,
     "free_best_text": "OFUCKINGANDTHISISWEALLYPROVEMBEF",
@@ -21,4 +32,4 @@
     },
     "spurious": 1.0
   }
-}
+]

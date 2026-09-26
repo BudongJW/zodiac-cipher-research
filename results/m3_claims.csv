@@ -1,17 +1,31 @@
-id,cipher,claimant,year,claimed,plaintext,key_source,wildcards,freedoms,fits_homophonic,fits_simple,min_errors,conflicts,score,free_best,beaten_by_free,z340_agree,z340_expected,z340_p,z408_agree,z408_expected,z408_p,grade
-Z13-bauer,z13,Craig Bauer,2017,ALFRED E NEUMAN,ALFREDENEUMAN,,False,,False,False,1,"{""N"": {""F"": 1, ""M"": 1}}",89.51,112.24,1.0,0/9,0.71,1.0000000000000002,0/9,0.66,1.0000000000000002,C
-Z13-garlick,z13,Ryan Garlick,2020,DR EAT A TOTPEDO,DREATATOTPEDO,z340,False,为 Z340 中没有的两个符号（圈8、[）另行指定字母；接受拼写错误 TOTPEDO,True,False,0,,65.74,112.24,1.0,9/9,0.71,6.676948426454338e-11,2/9,0.66,0.13422158486961322,B
-Z13-stewart,z13,Gary L. Stewart,2014,EARL VAN BEST JR,EARLVANBESTJR,,False,以“字母数为 13”作为依据,False,False,5,"{""A"": {""E"": 1, ""J"": 1}, ""N"": {""R"": 1, ""T"": 1}, ""0"": {""V"": 1, ""N"": 1, ""E"": 1}, ""M"": {""B"": 1, ""R"": 1}}",86.74,112.24,1.0,1/9,0.71,0.5268215333335585,0/9,0.66,1.0000000000000002,C
-Z13-kelleher,z13,Michael Kelleher,2002,THE BIG SECRETE,THEBIGSECRETE,,True,三个圈8视为通配符,False,False,2,"{""0"": {""I"": 1, ""S"": 1, ""C"": 1}}",94.79,112.24,1.0,2/9,0.71,0.15522012531717766,2/9,0.66,0.13422158486961322,C
-Z13-ziraoui,z13,Fayçal Ziraoui,2021,KAYR → KAYE（Lawrence Kane）,,,False,多步变换（Z340 密钥 → A1Z26 变体 → 表盘位置 → Trifid）,,,,,,112.24,,,,,,,,D
-Z13-casebreakers,z13,Case Breakers,2021,Gary Francis Poste,,,False,变位（anagram）；先选定嫌疑人,,,,,,112.24,,,,,,,,D
-Z13-clausen,z13,Tim Clausen,2025,LEE ALLEN / ALLEN NAME,,,False,“校验和”规则指定圈8；字母数与密文长度不一致,,,,,,112.24,,,,,,,,D
-Z13-demo-steve,z13,Oranchak Wiki（反例演示）,,STEVE PETE WEST,STEVEPETEWEST,,False,专门构造以符合重复模式,True,False,0,,52.31,112.24,1.0,2/9,0.71,0.15522012531717766,2/9,0.66,0.13422158486961322,B
-Z13-demo-laura,z13,Oranchak（反例演示）,,LAURA CATAPULT,LAURACATAPULT,,False,专门构造以符合重复模式,True,False,0,,64.83,112.24,1.0,0/9,0.71,1.0000000000000002,0/9,0.66,1.0000000000000002,B
-Z32-grinell-2020,z32,Richard Grinell,2020,ESTIMATE FOUR RADIANS AND FIVE INCHES,ESTIMATEFOURRADIANSANDFIVEINCHES,,False,,True,False,0,,158.53,239.04,1.0,4/30,1.77,0.09630941098589232,3/27,1.73,0.24750597554927375,B
-Z32-cragle,z32,Cragle,,THREE RADIANS FROM MOUNT AREA TWO INCH,THREERADIANSFROMMOUNTAREATWOINCH,,False,,True,False,0,,154.44,239.04,1.0,2/30,1.77,0.5365656635588186,1/27,1.73,0.8354801381487489,B
-Z32-stampher,z32,David Stampher,2026,IN THREE AND THREE EIGHTHS RADIANS TEN,INTHREEANDTHREEEIGHTHSRADIANSTEN,,False,以地理约束筛选候选,True,False,0,,110.49,239.04,1.0,2/30,1.77,0.5365656635588186,1/27,1.73,0.8354801381487489,B
-Z32-foxon,z32,Floe Foxon,2023,TWELVE INCHES ALONG THE THREE RADIANS（换位后，含拼写错误）,,,False,Z340 式换位；接受拼写错误；作者自认结果属初步,,,,,,239.04,,,,,,,,D
-Z32-ziraoui,z32,Fayçal Ziraoui,2021,LABOR DAY FIND 45.609 NORT 58.719 WEST,,,False,多步变换；含数字；两个符号被丢弃,,,,,,239.04,,,,,,,,D
-Z32-amicone,z32,Francesco Amicone,2019,FOOTHILL BLVD HILLCREST 14 MI FAR 570°,,,False,含数字与缩写,,,,,,239.04,,,,,,,,D
-Z32-clausen,z32,Tim Clausen,2025,I AM THE ZODIAC KILLER,,,False,字母数与密文长度不一致,,,,,,239.04,,,,,,,,D
+id,cipher,claimant,year,claimed,plaintext,key_source,wildcards,freedoms,direct_min_errors,fits_homophonic,fits_simple,min_errors,conflicts,score,free_best,beaten_by_free,z340_agree,z340_expected,z340_p,z408_agree,z408_expected,z408_p,grade
+Z13-bauer,z13,Craig Bauer,2017,ALFRED E NEUMAN,ALFREDENEUMAN,,False,,,False,False,1,"{""N"": {""F"": 1, ""M"": 1}}",89.51,112.24,1.0,0/9,0.71,1.0000000000000002,0/9,0.66,1.0000000000000002,C
+Z13-garlick,z13,Ryan Garlick,2020,DR EAT A TOTPEDO,DREATATOTPEDO,z340,False,为 Z340 中没有的两个符号（圈8、[）另行指定字母；接受拼写错误 TOTPEDO,,True,False,0,,65.74,112.24,1.0,9/9,0.71,6.676948426454338e-11,2/9,0.66,0.13422158486961322,B
+Z13-stewart,z13,Gary L. Stewart,2014,EARL VAN BEST JR,EARLVANBESTJR,,False,以“字母数为 13”作为依据,,False,False,5,"{""A"": {""E"": 1, ""J"": 1}, ""N"": {""R"": 1, ""T"": 1}, ""0"": {""V"": 1, ""N"": 1, ""E"": 1}, ""M"": {""B"": 1, ""R"": 1}}",86.74,112.24,1.0,1/9,0.71,0.5268215333335585,0/9,0.66,1.0000000000000002,C
+Z13-kelleher,z13,Michael Kelleher,2002,THE BIG SECRETE,THEBIGSECRETE,,True,三个圈8视为通配符,,False,False,2,"{""0"": {""I"": 1, ""S"": 1, ""C"": 1}}",94.79,112.24,1.0,2/9,0.71,0.15522012531717766,2/9,0.66,0.13422158486961322,C
+Z13-ziraoui,z13,Fayçal Ziraoui,2021,KAYR → KAYE（Lawrence Kane）,,,False,多步变换（Z340 密钥 → A1Z26 变体 → 表盘位置 → Trifid）,,,,,,,112.24,,,,,,,,D
+Z13-casebreakers,z13,Case Breakers,2021,Gary Francis Poste,,,False,变位（anagram）；先选定嫌疑人,,,,,,,112.24,,,,,,,,D
+Z13-clausen,z13,Tim Clausen,2025,LEE ALLEN / ALLEN NAME,,,False,“校验和”规则指定圈8；字母数与密文长度不一致,,,,,,,112.24,,,,,,,,D
+Z13-baber,z13,Alex Baber,2025,MARVIN MERRILL（称为 Black Dahlia 嫌疑人 Marvin Margolis 的化名）,,,True,"未公开的 2×7 网格换位与空符；以 “ELIZABETH” 为密钥；“专有 AI” 从 7,100 万个名字中筛选",5,,,,,,112.24,,,,,,,,D
+Z13-dominik,z13,Matthew Dominik,2026,AIM NOT O NORMAN,AIMNOTONORMAN,,False,,,True,False,0,,81.08,112.24,1.0,0/9,0.71,1.0000000000000002,0/9,0.66,1.0000000000000002,B
+Z13-insphare,z13,Insphare（GitHub）,2026,NEIL [X]. G. KING,NEILXGKING,,True,圈 8 视为空格（空符）；中间名首字母 X 未定,,True,True,0,,24.46,101.81,1.0,0/9,0.71,1.0000000000000002,1/9,0.66,0.4989370345083447,C
+Z13-culver-young,z13,Vincent Culver-Young,2022,ROSS O SULLIVAN,ROSSOSULLIVAN,,False,“字母—数字跳跃”规则,,False,False,5,"{""A"": {""R"": 1, ""A"": 1}, ""N"": {""S"": 1, ""V"": 1}, ""0"": {""O"": 1, ""U"": 1, ""L"": 1}, ""M"": {""L"": 1, ""N"": 1}}",85.7,112.24,1.0,0/9,0.71,1.0000000000000002,1/9,0.66,0.4989370345083447,C
+Z13-amicone,z13,Francesco Amicone,2024,JOE BEVILACQUA,JOEBEVILACQUA,,False,格栅 / 叠加；先选定嫌疑人,,False,False,5,"{""A"": {""J"": 1, ""U"": 1}, ""N"": {""E"": 1, ""Q"": 1}, ""0"": {""E"": 1, ""I"": 1, ""A"": 1}, ""M"": {""L"": 1, ""A"": 1}}",95.64,112.24,1.0,1/9,0.71,0.5268215333335585,1/9,0.66,0.4989370345083447,C
+Z13-grinell,z13,Richard Grinell,2025,Me⊕（Z13 即 “我 = Zodiac”）,,,False,非逐位替换的解读,,,,,,,112.24,,,,,,,,D
+Z13-sds,z13,SDS,2025,ANDREA J. ODELL,,,False,圈 8 按位置映射为不同字母（J、L、N）；字母数为 12,,,,,,,112.24,,,,,,,,D
+Z13-demo-steve,z13,Oranchak Wiki（反例演示）,,STEVE PETE WEST,STEVEPETEWEST,,False,专门构造以符合重复模式,,True,False,0,,52.31,112.24,1.0,2/9,0.71,0.15522012531717766,2/9,0.66,0.13422158486961322,B
+Z13-demo-laura,z13,Oranchak（反例演示）,,LAURA CATAPULT,LAURACATAPULT,,False,专门构造以符合重复模式,,True,False,0,,64.83,112.24,1.0,0/9,0.71,1.0000000000000002,0/9,0.66,1.0000000000000002,B
+Z32-grinell-2020,z32,Richard Grinell,2020,ESTIMATE FOUR RADIANS AND FIVE INCHES,ESTIMATEFOURRADIANSANDFIVEINCHES,,False,,,True,False,0,,158.53,239.04,1.0,4/30,1.77,0.09630941098589232,3/27,1.73,0.24750597554927375,B
+Z32-cragle,z32,Cragle,,THREE RADIANS FROM MOUNT AREA TWO INCH,THREERADIANSFROMMOUNTAREATWOINCH,,False,,,True,False,0,,154.44,239.04,1.0,2/30,1.77,0.5365656635588186,1/27,1.73,0.8354801381487489,B
+Z32-dmw-stampher,z32,DMW（2019）；David Stampher（2026，逐字相同）,2019,IN THREE AND THREE EIGHTHS RADIANS TEN,INTHREEANDTHREEEIGHTHSRADIANSTEN,,False,从约 15 万条模板短语中按重复模式与地图范围筛选,,True,False,0,,110.49,239.04,1.0,2/30,1.77,0.5365656635588186,1/27,1.73,0.8354801381487489,B
+Z32-reese,z32,Maddie D. Reese（借助 OpenAI Codex）,2026,THREE AND THREE EIGHTHS RADIANS & SIX INCHES（路径换位后）,AERIEHDETARNRHISTXHDITNSHASGENIE,,False,路径换位 position(i) = (8 + 29i) mod 32，由地图印记“1969 Edition”推出,,True,False,0,,116.13,239.04,1.0,2/30,1.77,0.5365656635588186,0/27,1.73,0.9999999999999998,B
+Z32-burke-2018,z32,Chad Burke,2018,COUPLED WITH THE MAP IN WDVC INCHES TWO,COUPLEDWITHTHEMAPINWDVCINCHESTWO,,False,含缩写 WDVC,,True,False,0,,152.93,239.04,1.0,1/30,1.77,0.840645713678033,1/27,1.73,0.8354801381487489,B
+Z32-burke-2019,z32,Chad W. Burke,2019,OKAY I SEVEN INS SOUTH OF DIABLO MT PEAK,OKAYISEVENINSSOUTHOFDIABLOMTPEAK,,False,含缩写 INS、MT,,True,False,0,,151.75,239.04,1.0,3/30,1.77,0.2585207081126063,1/27,1.73,0.8354801381487489,B
+Z32-cobb,z32,David Cobb,2018,"CALI … NORTH / X … WEST → 38°11'10.7""N, 121°48'43.6""W",,,False,ASCII、培根密码、弧度等多步换算；部分符号视为分隔符,,,,,,,239.04,,,,,,,,D
+Z32-praetorian,z32,Praetorian（Nathan Sportsman）,2026,三角形之间的三元组读作方位与距离（几何解，无明文）,,,False,几何解读，无逐位明文,,,,,,,239.04,,,,,,,,D
+Z32-dominik,z32,Matthew Dominik,2026,π 弧度 + 6 英寸 → Near/Neary 采石场（无逐位明文）,,,False,无逐位明文,,,,,,,239.04,,,,,,,,D
+Z32-allen,z32,Richard Allen,2024,公共土地测量系统（PLSS）解读，指向 Vallejo,,,False,明文未能核实（SSRN 无法访问）,,,,,,,239.04,,,,,,,,D
+Z32-foxon,z32,Floe Foxon,2023,TWELVE INCHES ALONG THE THREE RADIANS（换位后，含拼写错误）,,,False,Z340 式换位；接受拼写错误；作者自认结果属初步,,,,,,,239.04,,,,,,,,D
+Z32-ziraoui,z32,Fayçal Ziraoui,2021,LABOR DAY FIND 45.609 NORT 58.719 WEST,,,False,多步变换；含数字；两个符号被丢弃,,,,,,,239.04,,,,,,,,D
+Z32-amicone,z32,Francesco Amicone,2019,FOOTHILL BLVD HILLCREST 14 MI FAR 570°,,,False,含数字与缩写,,,,,,,239.04,,,,,,,,D
+Z32-clausen,z32,Tim Clausen,2025,I AM THE ZODIAC KILLER,,,False,字母数与密文长度不一致,,,,,,,239.04,,,,,,,,D

@@ -1,0 +1,257 @@
+{
+ "z32": {
+  "single": {
+   "RADIANS": {
+    "placements": 26,
+    "positions": 26,
+    "max_outside_symbols": 3,
+    "mean_outside_symbols": 0.92
+   },
+   "RADIAN": {
+    "placements": 27,
+    "positions": 27,
+    "max_outside_symbols": 3,
+    "mean_outside_symbols": 0.81
+   },
+   "INCHES": {
+    "placements": 27,
+    "positions": 27,
+    "max_outside_symbols": 3,
+    "mean_outside_symbols": 0.81
+   },
+   "INCH": {
+    "placements": 29,
+    "positions": 29,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.55
+   },
+   "ALONG": {
+    "placements": 28,
+    "positions": 28,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.68
+   },
+   "BOMB": {
+    "placements": 29,
+    "positions": 29,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.55
+   },
+   "MAG": {
+    "placements": 30,
+    "positions": 30,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.43
+   },
+   "NORTH": {
+    "placements": 28,
+    "positions": 28,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.68
+   },
+   "MAGNORTH": {
+    "placements": 25,
+    "positions": 25,
+    "max_outside_symbols": 3,
+    "mean_outside_symbols": 1.0
+   },
+   "MOUNT": {
+    "placements": 28,
+    "positions": 28,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.68
+   },
+   "DIABLO": {
+    "placements": 27,
+    "positions": 27,
+    "max_outside_symbols": 3,
+    "mean_outside_symbols": 0.81
+   },
+   "FALL": {
+    "placements": 29,
+    "positions": 29,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.55
+   },
+   "DIG": {
+    "placements": 30,
+    "positions": 30,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.43
+   },
+   "BUTTON": {
+    "placements": 27,
+    "positions": 27,
+    "max_outside_symbols": 3,
+    "mean_outside_symbols": 0.81
+   },
+   "ZERO": {
+    "placements": 29,
+    "positions": 29,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.55
+   },
+   "SET": {
+    "placements": 30,
+    "positions": 30,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.43
+   }
+  },
+  "joint": {
+   "RADIANS+INCHES": 350,
+   "RADIANS+INCH": 451,
+   "RADIAN+INCHES": 390,
+   "RADIANS+INCHES+ALONG": 2128,
+   "RADIANS+INCHES+BOMB": 2828
+  }
+ },
+ "z32_pos26_distinct": {
+  "single": {
+   "RADIANS": {
+    "placements": 26,
+    "positions": 26,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.62
+   },
+   "RADIAN": {
+    "placements": 27,
+    "positions": 27,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.56
+   },
+   "INCHES": {
+    "placements": 27,
+    "positions": 27,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.56
+   },
+   "INCH": {
+    "placements": 29,
+    "positions": 29,
+    "max_outside_symbols": 1,
+    "mean_outside_symbols": 0.38
+   },
+   "ALONG": {
+    "placements": 28,
+    "positions": 28,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.46
+   },
+   "BOMB": {
+    "placements": 29,
+    "positions": 29,
+    "max_outside_symbols": 1,
+    "mean_outside_symbols": 0.38
+   },
+   "MAG": {
+    "placements": 30,
+    "positions": 30,
+    "max_outside_symbols": 1,
+    "mean_outside_symbols": 0.3
+   },
+   "NORTH": {
+    "placements": 28,
+    "positions": 28,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.46
+   },
+   "MAGNORTH": {
+    "placements": 25,
+    "positions": 25,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.68
+   },
+   "MOUNT": {
+    "placements": 28,
+    "positions": 28,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.46
+   },
+   "DIABLO": {
+    "placements": 27,
+    "positions": 27,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.56
+   },
+   "FALL": {
+    "placements": 29,
+    "positions": 29,
+    "max_outside_symbols": 1,
+    "mean_outside_symbols": 0.38
+   },
+   "DIG": {
+    "placements": 30,
+    "positions": 30,
+    "max_outside_symbols": 1,
+    "mean_outside_symbols": 0.3
+   },
+   "BUTTON": {
+    "placements": 27,
+    "positions": 27,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 0.56
+   },
+   "ZERO": {
+    "placements": 29,
+    "positions": 29,
+    "max_outside_symbols": 1,
+    "mean_outside_symbols": 0.38
+   },
+   "SET": {
+    "placements": 30,
+    "positions": 30,
+    "max_outside_symbols": 1,
+    "mean_outside_symbols": 0.3
+   }
+  },
+  "joint": {
+   "RADIANS+INCHES": 361,
+   "RADIANS+INCH": 460,
+   "RADIAN+INCHES": 401,
+   "RADIANS+INCHES+ALONG": 2375,
+   "RADIANS+INCHES+BOMB": 3125
+  }
+ },
+ "z13": {
+  "single": {
+   "ZODIAC": {
+    "placements": 1,
+    "positions": 8,
+    "max_outside_symbols": 3,
+    "mean_outside_symbols": 3.0
+   },
+   "NAME": {
+    "placements": 6,
+    "positions": 10,
+    "max_outside_symbols": 3,
+    "mean_outside_symbols": 2.5
+   },
+   "THE": {
+    "placements": 9,
+    "positions": 11,
+    "max_outside_symbols": 3,
+    "mean_outside_symbols": 1.89
+   },
+   "KILLER": {
+    "placements": 1,
+    "positions": 8,
+    "max_outside_symbols": 3,
+    "mean_outside_symbols": 3.0
+   },
+   "MR": {
+    "placements": 12,
+    "positions": 12,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 1.33
+   },
+   "JR": {
+    "placements": 12,
+    "positions": 12,
+    "max_outside_symbols": 2,
+    "mean_outside_symbols": 1.33
+   }
+  },
+  "joint": {}
+ }
+}

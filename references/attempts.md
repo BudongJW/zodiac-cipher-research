@@ -49,6 +49,7 @@
 | “ROBERT EMMET THE HIPPIE” | 1969-08-12《SF Chronicle》报道多名读者提出【待核实】 | 并非真正的变位词：该短语 20 个字母，需额外的 R、M、P，且少一个 I | https://forum.zodiackillerciphers.com/community/zodiac-cipher-mailings-discussion/robert-emmet-the-hippie/ |
 | “Robert Hemphill”、“Emmet O'Wright” | 同期读者【待核实】 | 同样的不完全变位问题 | https://www.tapatalk.com/groups/zodiackillerfr/408-final-18-as-filler-t10792-s90.html |
 | “ROBERT E SMITH THE II” | 论坛管理员 “Horan”，2015 | 针对 Graysmith 的讽刺性变位 | https://zodiackillerhoax1986.freeforums.net/thread/84/solutions-408-anagram |
+| “BEFORE I MEET THEM ALL” | 论坛用户 tomc，2019 | 需约 6 处字母改动 | https://forum.zodiackillerciphers.com/community/zodiac-cipher-mailings-discussion/z18-solution/ |
 | 以 “PARADICE” 为密钥的列换位（意英混合读法），及更早的 “Giuseppe Bevilacqua” | Francesco Amicone，2022 | 自由度过高，无法证伪 | https://ostellovolante.com/2022/06/01/408-cipher-final-words-decryption-paradice-key/ |
 
 > **通用批评**：18 个字母的变位组合数量极其庞大，几乎可以拼出任何想要的名字（Oranchak：http://www.zodiackillerciphers.com/?p=267）。
@@ -142,8 +143,14 @@
 | ED SHAW | “Rembrandt” | Z408 密钥 + 空符 | — | — | 同上 |
 | FROM TED KACZYNS[K]I | Doug Oswell | — | — | 需补字母 | 同上 |
 | “Eddie Penerden”、“Steve Pete West”、“Gary Lyle Large”、“Laura Catapult” 等 | Oranchak 等（**反例演示**） | 专门构造的“完全符合重复模式”的名字 | **是** | 用来说明：符合模式的名字多得是，符合本身不构成证据 | 同上 |
+| **MARVIN MERRILL**（称为 Black Dahlia 嫌疑人 Marvin Margolis 的化名） | Alex Baber，2025–26（LA Times、Fox News 等报道） | 据称：“专有 AI”生成 7,100 万个名字后筛选；2×7 网格换位 + 替换 + 空符，密钥 ELIZABETH | **否**（直接读取需 5 处错误；换位与密钥未公开） | 不可复核；Oranchak 系列文章“Sherlock or Charlatan?”等批评 | https://zodiackillerciphers.com/zodiac-and-black-dahlia-solved-by-sherlock-or-charlatan/ |
+| AIM NOT O NORMAN | Matthew Dominik，2026（Zenodo） | 约束消去 | **是** | 与 Garlick 读法、反例同级 | https://zenodo.org/records/22818582 |
+| NEIL [X]. G. KING | Insphare（GitHub），2026 | 圈 8 视为空格，按姓名库筛选 | 删去圈 8 后是 | 需“圈 8 为空符”这一额外假设 | https://github.com/Insphare/zodiac-z13 |
+| ROSS O SULLIVAN | Vincent Culver-Young，2022 | “字母—数字跳跃” | **否**（需 5 处错误） | — | https://www.zodiackilleralphabetnumbercode.com/blog/the-my-name-is-cipher |
+| JOE BEVILACQUA | Francesco Amicone，2024 | 格栅 / 叠加 | **否**（需 5 处错误） | 作者承认不是标准密码学方法 | https://ostellovolante.com/2024/07/26/joe-bevilacqua-zodiac-killer-name-decryption/ |
+| “Me⊕”、ANDREA J. ODELL | Richard Grinell 2025；SDS 2025 | 非逐位替换 | — | 不可评分 | https://www.zodiacciphers.com/zodiac-news/the-link-between-the-z13-and-z32 |
 
-> **本项目的统一评估**（M3，[../docs/m3-report.md](../docs/m3-report.md)）：上表可逐位验证的声明中，Bauer、Kelleher、Stewart 与密文直接矛盾（C 级）；Garlick 与两个反例同为 B 级（符合但证据价值低）；其余为不可证伪的 D 级。
+> **本项目的统一评估**（M3，[../docs/m3-report.md](../docs/m3-report.md)）：上表可逐位验证的声明中，Bauer、Kelleher、Stewart、Culver-Young、Amicone 与密文直接矛盾或需额外假设（C 级，Insphare 同为 C 级）；Garlick、Dominik 与两个反例同为 B 级（符合但证据价值低）；Baber 等其余声明为不可证伪的 D 级。2025–2026 年外部项目的完整调查见 [external-leads.md §4](external-leads.md#4-外部项目的解读汇总)。
 
 ### 3.3 可解性评估
 
@@ -195,12 +202,16 @@
 | Cragle | 不详 | “THREE RADIANS FROM MOUNT AREA TWO INCH” | 符合重复模式 | https://zodiackillerciphers.com/wiki/index.php?title=Z32_Solutions |
 | Floe Foxon | 2023-06 | 把表盘“指针”按磁偏角（16–18°）设定得到 (12, 3)；经 Z340 式换位后读出带拼写错误的 “TWELVE INCHES ALONG THE THREE RADIANS” | 作者自认“不具说服力、属初步结果” | https://eprint.iacr.org/2023/982 |
 | R. Allen | 2024 | SSRN 预印本 | 未经同行评审 | https://doi.org/10.2139/ssrn.4715713 |
-| David Stampher | 2026 | “IN THREE AND THREE EIGHTHS RADIANS TEN” → 38.10995 N, 122.18535 W（Blue Rock Springs 附近）；附地理约束求解代码 | 未经他人验证 | https://github.com/dstampher/zodiac-z32-cipher |
+| David Stampher（**与 DMW 2019 年的读法逐字相同**） | 2026 | “IN THREE AND THREE EIGHTHS RADIANS TEN” → 38.10995 N, 122.18535 W（Blue Rock Springs 附近）；附地理约束求解代码 | 其说明未提及 DMW；未经他人验证 | https://github.com/dstampher/zodiac-z32-cipher · DMW：https://zodiackillerciphers.com/zks-attachments/8025.pdf |
 | Grant Dickinson | 2026-03 | Devils Elbow → Lake Spaulding（与失踪护士 Donna Lass 相关） | Pelling 评论 | https://ciphermysteries.com/other-ciphers/zodiac-killer-ciphers/zodiac-killer-z32 |
 | Praetorian（N. Sportsman） | 2026-04-01 | 弧度/角度三元组几何 | 注意发布日期为愚人节；作者承认可能是事后推理 | https://www.praetorian.com/blog/a-possible-solution-to-the-zodiac-killer-z32-cipher/ |
 | Tim Clausen | 2025–26 | “I AM THE ZODIAC KILLER” | 未经独立验证 | https://thezodiacsolved.com/debunked-theories.html |
+| DMW | 2019 | “IN: THREE AND THREE EIGHTHS RADIANS: TEN”，指向 Arthur Leigh Allen 的住所 | 作者自称“不是唯一可能的解” | https://zodiackillerciphers.com/zks-attachments/8025.pdf |
+| Chad Burke | 2018 / 2019 | “COUPLED WITH THE MAP IN WDVC INCHES TWO”；“OKAY I SEVEN INS SOUTH OF DIABLO MT PEAK” | 均符合重复模式 | https://ciphermysteries.com/other-ciphers/zodiac-killer-ciphers/zodiac-killer-z32 |
+| Maddie D. Reese（借助 OpenAI Codex） | 2026 | “THREE AND THREE EIGHTHS RADIANS & SIX INCHES”，路径换位 (8 + 29i) mod 32，指向 La Honda | 代码公开、可复现；承认 DMW 的优先权 | https://github.com/maddiedreese/zodiac |
+| Matthew Dominik | 2026 | “π 弧度 + 6 英寸” → Near/Neary 采石场 | 无逐位明文 | https://zenodo.org/records/22817822 |
 
-> **本项目的统一评估**（M3，[../docs/m3-report.md](../docs/m3-report.md)）：Grinell、Cragle、Stampher 的读法都符合重复模式，但属 B 级——普通英文约每 2,800 个 32 字母片段就有 1 个同样符合，小文法中有 153 条“弧度 + 英寸”指令符合；三者与 Z340 / Z408 密钥的一致均在偶然水平。其余为 D 级。
+> **本项目的统一评估**（M3，[../docs/m3-report.md](../docs/m3-report.md)）：Grinell、Cragle、DMW / Stampher、Reese、Burke（两条）的读法都符合重复模式，但属 B 级——普通英文约每 2,800 个 32 字母片段就有 1 个同样符合，小文法中有 153 条“弧度 + 英寸”指令符合；它们与 Z340 / Z408 密钥的一致均在偶然水平。其余为 D 级。地理“命中”的检验见 [H003](../hypotheses/H003-z32-map-lookelsewhere.md)。
 
 ### 4.4 可解性评估
 

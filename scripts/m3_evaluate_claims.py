@@ -73,30 +73,43 @@ def main() -> None:
     keys = {"z340": reference_key("z340"), "z408": reference_key("z408")}
     english = zodiac_plaintexts() + [stdlib_english()]
 
+    def cipher_for(claim: dict) -> str:
+        """声明所针对的密文；drop_symbols 表示声明把这些符号视为空符（删去）。"""
+        text = load(claim["cipher"]).text
+        for sym in claim.get("drop_symbols", []):
+            text = text.replace(sym, "")
+        return text
+
     context = {}
-    for name in ("z13", "z32"):
-        cipher = load(name).text
+    for claim in claims:
+        cipher = cipher_for(claim)
+        if cipher in context:
+            continue
         free = solve(cipher, model, restarts=args.restarts, sweeps=args.sweeps, seed=1, jobs=args.jobs)
         base = pattern_base_rate(cipher, english)
-        context[name] = {"cipher": cipher, "free_best": free[0].score, "free_best_text": free[0].plaintext,
-                         "free_scores": [r.score for r in free], "base_rate": base,
-                         "spurious": baseline_spurious(len(cipher))}
-        print(f"{name}：无约束求解最佳得分 {free[0].score:.1f}（{free[0].plaintext}）；"
+        context[cipher] = {"cipher": cipher, "free_best": free[0].score, "free_best_text": free[0].plaintext,
+                           "free_scores": [r.score for r in free], "base_rate": base,
+                           "spurious": baseline_spurious(len(cipher))}
+        print(f"{cipher}：无约束求解最佳得分 {free[0].score:.1f}（{free[0].plaintext}）；"
               f"英文片段模式符合率 {base['fits']}/{base['windows']:,}；"
-              f"M2 基线错误解胜出率 {context[name]['spurious']}", flush=True)
+              f"M2 基线错误解胜出率 {context[cipher]['spurious']}", flush=True)
 
     rows = []
     for claim in claims:
-        ctx = context[claim["cipher"]]
+        ctx = context[cipher_for(claim)]
         row = {"id": claim["id"], "cipher": claim["cipher"], "claimant": claim["claimant"],
                "year": claim["year"], "claimed": claim["claimed"], "plaintext": claim["plaintext"],
                "key_source": claim.get("key_source"),
                "wildcards": any("通配" in f or "空符" in f for f in claim["freedoms"]),
                "freedoms": "；".join(claim["freedoms"])}
+        direct = claim.get("direct_reading")
+        row["direct_min_errors"] = (consistency(ctx["cipher"], direct)["min_errors"]
+                                    if direct and len(direct) == len(ctx["cipher"]) else None)
         plain = claim["plaintext"]
         if plain is not None:
             cons = consistency(ctx["cipher"], plain)
-            score = objective(model.score(plain), entropy_bits(plain), w)
+            reading = claim.get("reading", plain)  # 含换位的声明按阅读顺序计算语言得分
+            score = objective(model.score(reading), entropy_bits(reading), w)
             row.update(fits_homophonic=cons["fits_homophonic"], fits_simple=cons["fits_simple"],
                        min_errors=cons["min_errors"],
                        conflicts=json.dumps(cons["conflicts"], ensure_ascii=False) if cons["conflicts"] else "",
@@ -122,7 +135,7 @@ def main() -> None:
         writer.writeheader()
         writer.writerows(rows)
     (ROOT / "results" / "m3_context.json").write_text(
-        json.dumps({k: {kk: vv for kk, vv in v.items() if kk != "free_scores"} for k, v in context.items()},
+        json.dumps([{kk: vv for kk, vv in v.items() if kk != "free_scores"} for v in context.values()],
                    ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(f"\n{'声明':<20}{'分级':>4}{'同音':>6}{'错误':>6}{'得分':>8}{'被无约束解超过':>14}{'Z340一致':>10}{'Z408一致':>10}")
