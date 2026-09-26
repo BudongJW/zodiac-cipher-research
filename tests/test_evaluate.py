@@ -1,7 +1,7 @@
 import unittest
 
 from zkc.cipher import load
-from zkc.evaluate import consistency, key_agreement, pattern_base_rate
+from zkc.evaluate import consistency, grade, key_agreement, pattern_base_rate, score_claim
 from zkc.reproduce import reference_key
 
 
@@ -30,6 +30,21 @@ class TestEvaluate(unittest.TestCase):
         # 与 Z408 密钥则无特别一致
         ka408 = key_agreement(self.z13, "DREATATOTPEDO", reference_key("z408"))
         self.assertGreater(ka408["p_value"], 0.01)
+
+    def test_grade(self):
+        self.assertEqual(grade(None, False, None), "D")
+        self.assertEqual(grade(False, False, 1e-9), "C")
+        self.assertEqual(grade(True, True, 1e-9), "C")
+        self.assertEqual(grade(True, False, 0.2), "B")
+        self.assertEqual(grade(True, False, 1e-5), "A")
+
+    def test_score_claim(self):
+        refs = {"z340": reference_key("z340"), "z408": reference_key("z408")}
+        garlick = score_claim(self.z13, "DREATATOTPEDO", references=refs, key_source="z340")
+        self.assertEqual(garlick["grade"], "B")  # Z340 一致是构造所致，不计为独立证据
+        # 若不声明 key_source，则 9/9 的一致会被当作独立证据
+        self.assertEqual(score_claim(self.z13, "DREATATOTPEDO", references=refs)["grade"], "A")
+        self.assertEqual(score_claim(self.z13, "MARVINMERRILL", references=refs)["grade"], "C")
 
     def test_pattern_base_rate(self):
         r = pattern_base_rate("ab", ["XYZXYZ"], min_distinct=1)

@@ -185,6 +185,8 @@
 | [Al-ex-W/Zodiac-Solutions](https://github.com/Al-ex-W/Zodiac-Solutions)（2026） | Z13 / Z32 | 16 项实验，不声称有解；认为“能让 Z13 可解的模型都使其不可证伪”（注意：其 README 误称 Z32 只有一个重复符号） | — |
 | [ghostsecktos33-web/Z13_CrackerV2](https://github.com/ghostsecktos33-web/Z13_CrackerV2)（2026） | Z13 | 仿 Baber 的 2×7 名字排列搜索（约 6,400 万种），示例输出 MARVIN / MERRILL；仅工具 | — |
 | [QueenCityStripes/Z13-Census-Experiment](https://github.com/QueenCityStripes/Z13-Census-Experiment)（2021） | Z13 | 估算湾区居民中姓名符合 Z13 的人数——与本项目 M2 / B2 属同一类基线实验 | — |
+| RobotWhiteBread/ZodiacDeCode（2026-08） | — | 档案交叉比对；方法与结果未公开（私下开发），声明不公开指认任何人 | — |
+| Andreuvisk/z13-zodiaco（2026-08，GPL-3.0） | Z13 | 无 README，内容未核实【待核实】 | — |
 | 其他（仅工具或无结论）：RadioZodiac13/Radio-Z13、SoylentAquamarine/zodiac-collective（多个 LLM 代理协作，尚无结果）、taufiq0205/zodiac-cipher-analysis、evant455-cpu/z_cipher、alexanderdfox/-Zodiac-Killer-Cipher-Solver（量子搜索原型）、jonathanAbeijon-svg/CERVSUS-Algorithm | — | — | — |
 
 ### 4.3 网站与独立研究者（新增部分）
@@ -204,6 +206,7 @@
 ### 4.4 论文与预印本（新增部分）
 
 - **Matthew Dominik 的 Zenodo 系列**（2025-11 至 2026-09，CC BY 4.0）：从“不可判定”（17966491、18202334、19104092：“Z13 与 Z32 是反密码系统，不声称解密”）逐步转向提出候选：Z13 = **AIM NOT O NORMAN**（22818582，v3.0，自称“差一个独立的外部判据”）；Z32 = “π 弧度 + 6 英寸” → Near/Neary 采石场（22817822，无逐位明文）。https://zenodo.org/records/22818582 · https://zenodo.org/records/22817822
+- **Alex Jennie Schuett-Bell**，“A Source-Constrained Analysis of the Zodiac Z32 Mount Diablo Cipher: The (29,8) Affine Traversal and a Conditional 27/8-Radian Result”（Zenodo 22065724，2026-08-23，CC BY 4.0）：提出仿射遍历 p(i) = 29i + 8 (mod 32)（与 Reese 读法所用换位相同），由重复约束得到候选角度 “3⅛（27/8）弧度”；**作者明确表示不声称完整解**，距离部分、La Honda 与炸弹位置均未确立。https://zenodo.org/records/22065724
 - DECRYPT、CrypTool、HistoCrypt 等学术团队：未发现专门针对 Z13 / Z32 的论文【待核实完整性】。
 
 ### 4.5 AI / LLM 相关声明

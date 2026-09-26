@@ -31,6 +31,7 @@ from zkc.cipher import ROOT, load  # noqa: E402
 from zkc.console import utf8_stdio  # noqa: E402
 from zkc.corpus import get_model, stdlib_english  # noqa: E402
 from zkc.evaluate import consistency, key_agreement, pattern_base_rate  # noqa: E402
+from zkc.evaluate import grade as evaluate_grade  # noqa: E402
 from zkc.reproduce import reference_key  # noqa: E402
 from zkc.solver import DEFAULT_ENTROPY_WEIGHT, objective, solve  # noqa: E402
 from zkc.stats import entropy_bits  # noqa: E402
@@ -49,12 +50,9 @@ def baseline_spurious(length: int) -> float | None:
 
 def grade(c: dict) -> str:
     if c["plaintext"] is None:
-        return "D"
-    if not c["fits_homophonic"] or c["wildcards"]:
-        return "C"
-    independent_key = c.get("key_source") is None and (
-        c["z340_p"] < 1e-3 or c["z408_p"] < 1e-3)
-    return "A" if independent_key else "B"
+        return evaluate_grade(None, False, None)
+    ps = [c[f"{k}_p"] for k in ("z340", "z408") if k != c.get("key_source")]
+    return evaluate_grade(c["fits_homophonic"], c["wildcards"], min(ps) if ps else None)
 
 
 def main() -> None:

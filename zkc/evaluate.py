@@ -79,3 +79,50 @@ def pattern_base_rate(cipher: str, texts: Iterable[str], min_distinct: int = 6) 
             total += 1
             hits += fits(w, cipher)
     return {"windows": total, "fits": hits, "rate": hits / total if total else float("nan")}
+
+
+def grade(fits_homophonic: bool | None, extra_assumptions: bool, independent_key_p: float | None) -> str:
+    """M3 分级：A 符合且有独立证据；B 符合但证据价值低；C 需额外假设；D 无法逐位验证。
+
+    independent_key_p：与某个已知密钥的一致性 p 值（仅当该密钥并非声明者据以构造读法时才算独立证据）。
+    """
+    if fits_homophonic is None:
+        return "D"
+    if not fits_homophonic or extra_assumptions:
+        return "C"
+    return "A" if independent_key_p is not None and independent_key_p < 1e-3 else "B"
+
+
+def score_claim(cipher: str, plaintext: str, *, reading: str | None = None,
+                references: Mapping[str, Mapping[str, str]] | None = None,
+                key_source: str | None = None, extra_assumptions: bool = False,
+                english: Iterable[str] | None = None, model=None, free_scores: list[float] | None = None,
+                entropy_weight: float | None = None) -> dict:
+    """对单条逐位明文声明做 M3 式评估（供命令行 `python -m zkc score` 使用）。
+
+    reading：若声明含换位，给出阅读顺序的明文（用于语言得分）；plaintext 须为密文顺序。
+    references：{名称: 已知密钥}；key_source：声明据以构造读法的密钥名（其一致性不计为独立证据）。
+    english：用于计算模式基准率的英文语料；model / free_scores：用于语言得分比较（可省略）。
+    """
+    from .solver import DEFAULT_ENTROPY_WEIGHT, objective
+    from .stats import entropy_bits
+
+    cons = consistency(cipher, plaintext)
+    out: dict = {"length": len(cipher), **cons}
+    independent_p = None
+    for name, key in (references or {}).items():
+        ka = key_agreement(cipher, plaintext, key)
+        out[f"key_{name}"] = ka
+        if name != key_source and ka["shared_positions"]:
+            independent_p = ka["p_value"] if independent_p is None else min(independent_p, ka["p_value"])
+    if english is not None:
+        out["pattern_base_rate"] = pattern_base_rate(cipher, english)
+    if model is not None:
+        text = reading or plaintext
+        w = DEFAULT_ENTROPY_WEIGHT if entropy_weight is None else entropy_weight
+        out["language_score"] = objective(model.score(text), entropy_bits(text), w)
+        if free_scores:
+            out["free_best"] = max(free_scores)
+            out["beaten_by_free"] = sum(s > out["language_score"] for s in free_scores) / len(free_scores)
+    out["grade"] = grade(cons["fits_homophonic"], extra_assumptions, independent_p)
+    return out

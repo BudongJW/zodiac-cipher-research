@@ -45,7 +45,8 @@ Z32:  C9J|#Ok[AMf8?ORTG
 │   ├── m3-report.md          M3 报告：历次 Z13 / Z32 破译声明的统一评估
 │   ├── m4-report.md          M4 报告：密钥复用假设检验与后续方向
 │   ├── glyph-report.md       方向 A 报告：对照扫描件核对争议字形
-│   └── m5-report.md          M5 综合报告：Z13 / Z32 能被破译吗？
+│   ├── m5-report.md          M5 综合报告：Z13 / Z32 能被破译吗？
+│   └── records-requests.md   原件图像请求草稿（SFPD、SF Chronicle、ABC、FBI；未发送）
 ├── references/
 │   ├── README.md             参考文献总表（一手资料、论文、书籍、工具、视频）
 │   ├── attempts.md           历次破译尝试汇总（Z408 / Z340 / Z13 / Z32 / 其他信件）
@@ -75,6 +76,8 @@ python -m zkc overlap                     # 四份密文的符号重合表
 python -m zkc stats z32                   # 统计量（长度、多重度、同构模式、重复符号……）
 python -m zkc stats z340 --shuffle 20000  # 周期双字母重复 + 置换检验
 python -m zkc solve z408                  # 同音替换盲解（内置语言模型，无需下载数据）
+python -m zkc score z32 "ESTIMATE FOUR RADIANS AND FIVE INCHES"   # 按 M3 标准为一条新声明打分
+python scripts/watch_new_material.py      # 监测新材料与新声明（GitHub、博客、Zenodo、arXiv）
 python -m unittest discover -s tests      # 运行测试
 ```
 

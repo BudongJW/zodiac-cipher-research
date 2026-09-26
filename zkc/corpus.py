@@ -62,8 +62,14 @@ def builtin_model(n: int = 4, cache: bool = True) -> NgramModel:
     return model
 
 
+AZ_5GRAM = MODELS_DIR / "5-grams_english_beijinghouse_10TB_v7.gz"
+
+
 def get_model(spec: str) -> NgramModel:
-    """模型规格：'builtin:4'（默认）/ 'builtin:5' / AZdecrypt n-gram 文件路径。"""
+    """模型规格：'auto'（有 AZdecrypt 5-gram 则用之，否则内置 4-gram）/ 'builtin:4' / 'builtin:5' /
+    AZdecrypt n-gram 文件路径。"""
+    if spec == "auto":
+        spec = str(AZ_5GRAM) if AZ_5GRAM.exists() else "builtin:4"
     if spec.startswith("builtin"):
         _, _, n = spec.partition(":")
         return builtin_model(int(n) if n else 4)

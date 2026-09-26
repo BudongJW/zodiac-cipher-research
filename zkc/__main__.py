@@ -4,6 +4,7 @@
     overlap           四份密文的符号重合表
     verify            确定性复现 Z408 / Z340 的已知解
     solve NAME        同音替换盲解（Z340 默认先按已发表方案去除换位）
+    score NAME TEXT   按 M3 标准为一条新的破译声明打分
     build-model       由语料构建 n-gram 模型
 """
 
@@ -88,6 +89,51 @@ def _cmd_solve(args) -> None:
         print("\n密钥（明文字母: 符号）：\n" + format_key(results[0].key))
 
 
+def _cmd_score(args) -> None:
+    from .corpus import stdlib_english
+    from .evaluate import score_claim
+    from .names import letters_only
+    from .reproduce import reference_key
+    from .solver import solve
+    from .synth import zodiac_plaintexts
+
+    cipher = load(args.name).text
+    for sym in args.drop:
+        cipher = cipher.replace(sym, "")
+    plain = letters_only(args.plaintext)
+    reading = letters_only(args.reading) if args.reading else None
+    if len(plain) != len(cipher):
+        sys.exit(f"明文 {len(plain)} 个字母，密文 {len(cipher)} 个符号，长度不一致——无法逐位评估（D 级）")
+    model = get_model(args.model)
+    free = None
+    if not args.no_free:
+        free = [r.score for r in solve(cipher, model, restarts=args.free_restarts, sweeps=1000,
+                                       seed=1, jobs=args.jobs)]
+    english = None if args.no_base_rate else zodiac_plaintexts() + [stdlib_english()]
+    r = score_claim(cipher, plain, reading=reading,
+                    references={"z340": reference_key("z340"), "z408": reference_key("z408")},
+                    key_source=args.key_source, extra_assumptions=args.extra or bool(args.drop),
+                    english=english, model=model, free_scores=free)
+
+    print(f"密文 {args.name}（{len(cipher)} 符号{'，删去 ' + args.drop if args.drop else ''}）｜声明 {plain}")
+    print(f"同音替换条件：{'符合' if r['fits_homophonic'] else '不符合'}；简单替换条件："
+          f"{'符合' if r['fits_simple'] else '不符合'}；至少需假设的加密错误：{r['min_errors']}")
+    if r["conflicts"]:
+        print("  冲突：" + "；".join(f"{s}→{'/'.join(v)}" for s, v in r["conflicts"].items()))
+    for k in ("z340", "z408"):
+        ka = r[f"key_{k}"]
+        tag = "（读法据此构造，不计为独立证据）" if k == args.key_source else ""
+        print(f"与 {k.upper()} 密钥一致：{ka['matches']}/{ka['shared_positions']}（偶然期望 {ka['expected']:.2f}，"
+              f"p = {ka['p_value']:.3g}）{tag}")
+    if "pattern_base_rate" in r:
+        b = r["pattern_base_rate"]
+        print(f"模式基准率：普通英文片段 {b['fits']:,} / {b['windows']:,} 同样符合（{b['rate']:.2e}）")
+    print(f"语言得分（模型 {model.name}）：{r['language_score']:.1f}"
+          + (f"；无约束求解最佳 {r['free_best']:.1f}，{r['beaten_by_free']:.0%} 的无约束解得分更高"
+             if free else ""))
+    print(f"分级：{r['grade']}（A 符合且有独立证据 / B 符合但证据价值低 / C 需额外假设 / D 无法逐位验证）")
+
+
 def _cmd_build_model(args) -> None:
     from pathlib import Path
 
@@ -135,6 +181,20 @@ def main(argv=None) -> None:
     s.add_argument("--top", type=int, default=3)
     s.add_argument("--show-key", action="store_true")
     s.set_defaults(func=_cmd_solve)
+
+    s = sub.add_parser("score", help="按 M3 标准为一条新的破译声明打分")
+    s.add_argument("name", help="z13 / z32 或文件路径")
+    s.add_argument("plaintext", help="与密文逐位对应的明文（密文顺序，空格与标点会被忽略）")
+    s.add_argument("--reading", help="声明含换位时，阅读顺序的明文（用于语言得分）")
+    s.add_argument("--drop", default="", help="声明视为空符而删去的符号，如 0（圈 8）")
+    s.add_argument("--key-source", choices=["z340", "z408"], help="读法据以构造的已知密钥")
+    s.add_argument("--extra", action="store_true", help="声明需要额外假设（错误、通配符等）")
+    s.add_argument("--model", default="auto", help="auto / builtin:4 / n-gram 文件路径")
+    s.add_argument("--free-restarts", type=int, default=16)
+    s.add_argument("--no-free", action="store_true", help="跳过无约束求解对照")
+    s.add_argument("--no-base-rate", action="store_true", help="跳过模式基准率（较慢）")
+    s.add_argument("--jobs", type=int, default=os.cpu_count() or 1)
+    s.set_defaults(func=_cmd_score)
 
     s = sub.add_parser("build-model", help="构建 n-gram 模型")
     s.add_argument("--n", type=int, default=4)
