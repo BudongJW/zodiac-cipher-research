@@ -78,8 +78,13 @@ class Problem:
 
 def anneal(problem: Problem, table: np.ndarray, rng: np.random.Generator, *,
            sweeps: int, t_start: float, t_end: float, entropy_weight: float,
-           fixed: dict[int, int] | None = None, polish_sweeps: int = 50):
-    """单次退火。返回 (score, key 数组, mean_ngram, H)。"""
+           fixed: dict[int, int] | None = None, polish_sweeps: int = 50,
+           cycle=None, cycle_weight: float = 0.0):
+    """单次退火。返回 (score, key 数组, mean_ngram, H)。
+
+    cycle：可选的 zkc.cycles.CycleTerm；给出时目标函数加上 cycle_weight × 轮换对数似然
+    （要求 problem 的文本按密文书写顺序排列）。
+    """
     n_sym, length, n_grams = len(problem.symbols), problem.length, problem.n_grams
     fixed = fixed or {}
     key = rng.integers(0, 26, size=n_sym)
@@ -94,6 +99,8 @@ def anneal(problem: Problem, table: np.ndarray, rng: np.random.Generator, *,
     plogp = _plogp(cnt, length)
     h = float(plogp.sum())
     w = entropy_weight
+    if cycle is not None:
+        cycle.init(key)
 
     temps = list(t_start * (t_end / t_start) ** np.linspace(0.0, 1.0, sweeps))
     temps += [0.0] * polish_sweeps  # 贪心收尾
@@ -110,6 +117,8 @@ def anneal(problem: Problem, table: np.ndarray, rng: np.random.Generator, *,
                 + (_plogp(cnt[old] - c, length) - plogp[old])
             h_new[old] = h
             sc = tot / n_grams * np.power(np.maximum(h_new, 1e-12) / H_REF, w)
+            if cycle is not None:
+                sc = sc + cycle_weight * np.asarray(cycle.delta(int(s), old))
             if sweep_t > 0:
                 z = np.exp((sc - sc.max()) / sweep_t)
                 cdf = np.cumsum(z)
@@ -125,11 +134,14 @@ def anneal(problem: Problem, table: np.ndarray, rng: np.random.Generator, *,
                 cnt[new] += c
                 plogp[[old, new]] = _plogp(cnt[[old, new]], length)
                 h = float(plogp.sum())
+                if cycle is not None:
+                    cycle.commit(int(s), old, new)
         if sweep_t == 0 and not changed:
             break
 
     mean = total / n_grams
-    return objective(mean, h, w), key.copy(), mean, h
+    extra = cycle_weight * cycle.total() if cycle is not None else 0.0
+    return objective(mean, h, w) + extra, key.copy(), mean, h
 
 
 def objective(mean_ngram: float, entropy: float, entropy_weight: float) -> float:
@@ -167,6 +179,11 @@ def _run_one(args):
     text, n, seed, opts, fixed = args
     problem = Problem(text, n)
     rng = np.random.default_rng(seed)
+    opts = dict(opts)
+    cycle_eps = opts.pop("cycle_eps", None)
+    if opts.get("cycle_weight", 0.0) > 0:
+        from .cycles import CycleTerm
+        opts["cycle"] = CycleTerm(problem.sid.tolist(), len(problem.symbols), cycle_eps)
     score, key, mean, h = anneal(problem, _WORKER["table"], rng, fixed=fixed, **opts)
     return score, key, mean, h, seed
 
@@ -174,16 +191,21 @@ def _run_one(args):
 def solve(text: str, model: NgramModel, *, restarts: int = 8, sweeps: int = 1000,
           t_start: float = 2.0, t_end: float = 0.02,
           entropy_weight: float = DEFAULT_ENTROPY_WEIGHT,
-          seed: int = 0, jobs: int = 1, fixed: dict[str, str] | None = None) -> list[SolveResult]:
+          seed: int = 0, jobs: int = 1, fixed: dict[str, str] | None = None,
+          cycle_weight: float = 0.0, cycle_eps: float = 0.4) -> list[SolveResult]:
     """求解同音替换密文 text（应已按明文顺序排列，即已去除换位）。
 
     fixed：预先固定的 {符号: 字母}（例如密钥复用假设）。
+    cycle_weight > 0 时，目标函数加上 cycle_weight × 轮换对数似然（模型错误率 cycle_eps；
+    text 须按密文书写顺序排列，见 zkc/cycles.py）。
     返回按得分降序排列的各次重启结果。
     """
     problem = Problem(text, model.n)
     fixed_ids = {problem.symbols.index(s): ALPHABET.index(l.upper())
                  for s, l in (fixed or {}).items() if s in problem.symbols}
     opts = dict(sweeps=sweeps, t_start=t_start, t_end=t_end, entropy_weight=entropy_weight)
+    if cycle_weight > 0:
+        opts.update(cycle_weight=cycle_weight, cycle_eps=cycle_eps)
     tasks = [(text, model.n, seed * 100_003 + r, opts, fixed_ids) for r in range(restarts)]
 
     if jobs > 1:
