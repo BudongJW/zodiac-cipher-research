@@ -46,7 +46,8 @@ Z32:  C9J|#Ok[AMf8?ORTG
 │   ├── m4-report.md          M4 报告：密钥复用假设检验与后续方向
 │   ├── glyph-report.md       方向 A 报告：对照扫描件核对争议字形
 │   ├── m5-report.md          M5 综合报告：Z13 / Z32 能被破译吗？
-│   └── records-requests.md   原件图像请求草稿（SFPD、SF Chronicle、ABC、FBI；未发送）
+│   ├── records-requests.md   原件图像请求草稿（SFPD、SF Chronicle、ABC、FBI；未发送）
+│   └── cycle-report.md       方向 F 报告：Zodiac 的同音符号轮换习惯
 ├── references/
 │   ├── README.md             参考文献总表（一手资料、论文、书籍、工具、视频）
 │   ├── attempts.md           历次破译尝试汇总（Z408 / Z340 / Z13 / Z32 / 其他信件）
@@ -63,7 +64,7 @@ Z32:  C9J|#Ok[AMf8?ORTG
 ├── scripts/                  实验脚本（Z340 换位扫描、M2 基线、M3 评估、M4 / H003 假设检验、字形核对）
 ├── results/                  实验结果（CSV / JSON）
 ├── tests/                    单元测试
-└── hypotheses/               预注册假设（README 为规则、模板与索引；H001–H003 已完成）
+└── hypotheses/               预注册假设（README 为规则、模板与索引；H001–H005 已完成）
 ```
 
 ## 快速开始
@@ -93,6 +94,7 @@ python -m unittest discover -s tests      # 运行测试
 | 方向 E | ✅ | 预注册检验 H003：Z32 “弧度 + 英寸”读法的地理命中**不构成证据**（Grinell 读法在其自身规则下距目标 2.22 英里；Blue Rock Springs 的唯一命中偶然概率 0.10）（[H003](hypotheses/H003-z32-map-lookelsewhere.md)） |
 | M5 | ✅ | 综合报告：结论、方法收获、能改变结论的新证据、今后声明的评估清单（[m5-report](docs/m5-report.md)） |
 | 外部线索 | ✅ | Z13 原件在 SFPD、公开图像最高约 830 像素；唯一的同钥候选 Z38 即使成立也只有 70 个符号；crib 对 Z32 几乎无约束力（每个候选词在任何位置都能放下）；2025–2026 年外部项目的新声明（含 AI 辅助的）纳入评估后，30 条中仍无 A 级（[external-leads](references/external-leads.md)） |
+| 方向 F（自主） | ✅ | Zodiac 的同音符号轮换习惯：Z408 强轮换（z = 19.3），Z340 的轮换出现在**密文书写顺序**；该模型在真实 32 字符窗口上能把真实明文排到前几个百分点，可作为评估读法的新维度（DMW / Stampher、Reese 的读法处于第 86–95 百分位）。但预注册检验 H004 显示，把它加入求解器**不能**让短密文变得可解；H005 排除了已知密钥的移位 / 反序变换（[cycle-report](docs/cycle-report.md)） |
 
 **核心结论**（详见 [M5 综合报告](docs/m5-report.md)）：Z32 很可能与 Z408 / Z340 属同一类同音替换体制，但换了一张新密钥；在 32 字符下，任何“读得通”的解都无法与大量同样读得通的错误解区分——**现有 Z13 / Z32 声明没有一条具备证据价值**，突破只能来自密文以外的独立约束。
 

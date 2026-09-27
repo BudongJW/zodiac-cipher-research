@@ -1,0 +1,22 @@
+{
+ "z340": {
+  "best_score": 81.8411021835437,
+  "transform": "shift+4",
+  "order": "dec(1,14)/rev",
+  "text": "RMVERSAKEWTHESVIXSMVHXMFAXJECTRC",
+  "null_mean": 90.09607797590004,
+  "null_sd": 8.158293480578244,
+  "null_n": 100,
+  "p_value": 0.8415841584158416
+ },
+ "z408": {
+  "best_score": 105.31548558380447,
+  "transform": "shift+4",
+  "order": "dec(1,8)",
+  "text": "NNEXSPKBRFOREWHILSATMMRIPMYHJXMI",
+  "null_mean": 107.98065072846697,
+  "null_sd": 6.783849549767036,
+  "null_n": 30,
+  "p_value": 0.7096774193548387
+ }
+}
